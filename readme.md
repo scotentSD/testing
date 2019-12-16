@@ -8,4 +8,3 @@
 - Commitment 7: **We will help x companies find markets for their products outside Scotland by xxxx**
 - Commitment 8: **We promise to be secure and radically simple to deal with**
 - Commitment 9: **Every year we will report how well we are doing.**
-
