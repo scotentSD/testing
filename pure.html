@@ -88,9 +88,24 @@ function generateHtmlTable(data) {
       if(typeof(data[0]) === 'undefined') {
         return null;
       } else {
-    $.each(data, function( index, row ) {
+        $.each(data, function( index, row ) {
       //bind header
+      
+      if(index == 0) {
+        html += '<thead>';
+        html += '<tr>';
+      
+        $.each(row, function( index, colData ) {
+          html += '<th>';
+          html += colData;
+          html += '</th>';
+        });
+      
+        html += '</tr>';
+        html += '</thead>';
 
+        html += '<tbody>';
+      } else {
       html += '<tr>';
       
       $.each(row, function( index, colData ) {
@@ -100,13 +115,14 @@ function generateHtmlTable(data) {
       });
       html += '</tr>';
       }
-    });
-    html += '</tbody>';
-    html += '</table>';
-    <!-- alert(html); -->
-    $('#csv-display').append(html);
-    }
-  } 
+        });
+    
+        html += '</tbody>';
+        html += '</table>';
+        <!-- alert(html); -->
+        $('#csv-display').append(html);
+      }
+} 
 
 
 
