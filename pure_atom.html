@@ -76,8 +76,11 @@ function generateHtmlTable(data) {
       if(typeof(data[0]) === 'undefined') {
         return null;
       } else {
+
+//zzzzzz
         $.each(data, function( index, row ) {  //ZZZZZZ
           //bind header
+//0
           if(index == 0) {
                 html += '<thead>';
                 html += '<tr>';
@@ -93,6 +96,8 @@ function generateHtmlTable(data) {
 
                 html += '<tbody>';
           } //end first half of IF 0
+//0
+//NOT 0
           else {
                 html += '<tr>';
 
@@ -103,11 +108,12 @@ function generateHtmlTable(data) {
                 });
                 html += '</tr>';
           } //end second  half of IF 0
+//NOT 0
         }); //end of ZZZZZZ
-
+//zzzzzz
         html += '</tbody>';
         html += '</table>';
-        // alert(html); 
+        // alert(html);
         $('#csv-display').append(html);
       } // endof IF not undefined
 } // end of function
