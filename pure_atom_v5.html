@@ -80,32 +80,7 @@ function generateHtmlTable(data) {
                 html += '<tr>';
                 $.each(row, function( index, colData ) {
                       html += '<td>';
-
-
-
-                      var varScore = colData;
-                      switch (varScore) {
-                      	case '1':
-                      		//alert('jQuery Wins!');
-                          html += '<img src="Pure1.png" height="80px"'>
-                      		break;
-                      	case '2':
-                      		//alert('prototype Wins!');
-                          html += '<img src="Pure2.png" height="80px"'>
-
-                      		break;
-                      	case '3':
-                      		//alert('mootools Wins!');
-                          html += '<img src="Pure3.png" height="80px"'>
-                      		break;
-                      	default:
-                      		html += colData;
-                      }
-                      //outputs "jQuery Wins!"
-
-
-
-
+                      html += colData;
                       html += '</td>';
                 });
                 html += '</tr>';
