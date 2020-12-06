@@ -27,7 +27,7 @@ href="../../favicon.ico">
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">Scottish Enterprise</a>
+          <a class="navbar-brand" href="index.html">Scottish Enterprise V2</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -82,19 +82,20 @@ function generateHtmlTable(data) {
           //bind header
 //0
           if(index == 0) {
-                html += '<thead>';
+                //html += '<thead>';
+                html += '<tbody>';
                 html += '<tr>';
 
                 $.each(row, function( index, colData ) {
-                      html += '<th>';
+                      html += '<td>';
                       html += colData;
-                      html += '</th>';
+                      html += '</td>';
                 });
 
                 html += '</tr>';
-                html += '</thead>';
+                //html += '</thead>';
 
-                html += '<tbody>';
+
           } //end first half of IF 0
 //0
 //NOT 0
