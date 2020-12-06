@@ -107,7 +107,9 @@ function generateHtmlTable(data) {
                       //outputs "jQuery Wins!"
                       html += '</td>';
                 });
-                alert(varTot);
+                //alert(varTot);
+                //Add teh total to teh end of the row
+                html+= '<td>' + varTot + '</td>'
                 html += '</tr>';
         }); //end of ZZZZZZ
 //zzzzzz
