@@ -1,39 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+<head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible"
+content="IE=edge"> <meta name="viewport" content="width=device-width,
+initial-scale=1"> <!-- The above 3 meta tags *must* come first in the head; any
+other head content must come *after* these tags --> <meta name="description"
+content=""> <meta name="author" content=""> <link rel="icon"
+href="../../favicon.ico">
 
     <title>Scottish Enterprise</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap core CSS --> <link href="css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/starter-template.css" rel="stylesheet">
-    <link href="css/exports-wizard.css" rel="stylesheet">
+    <!-- Custom styles for this template --> <link
+    href="css/starter-template.css" rel="stylesheet"> <link
+    href="css/exports-wizard.css" rel="stylesheet">
 
-    <!-- Jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Jquery --> <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- jquery-csv   for parsing csv documents-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
-
+    <!-- jquery-csv   for parsing csv documents--> <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
 
 </head>
-
-
-
-
-
-
-
-
 
 <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -88,41 +76,41 @@ function generateHtmlTable(data) {
       if(typeof(data[0]) === 'undefined') {
         return null;
       } else {
-        $.each(data, function( index, row ) {
-      //bind header
+        $.each(data, function( index, row ) {  //ZZZZZZ
+          //bind header
+          if(index == 0) {
+                html += '<thead>';
+                html += '<tr>';
 
-      if(index == 0) {
-        html += '<thead>';
-        html += '<tr>';
+                $.each(row, function( index, colData ) {
+                      html += '<th>';
+                      html += colData;
+                      html += '</th>';
+                });
 
-        $.each(row, function( index, colData ) {
-          html += '<th>';
-          html += colData;
-          html += '</th>';
-        });
+                html += '</tr>';
+                html += '</thead>';
 
-        html += '</tr>';
-        html += '</thead>';
+                html += '<tbody>';
+          } //end first half of IF 0
+          else {
+                html += '<tr>';
 
-        html += '<tbody>';
-      } else {
-      html += '<tr>';
-
-      $.each(row, function( index, colData ) {
-        html += '<td>';
-        html += colData;
-        html += '</td>';
-      });
-      html += '</tr>';
-      }
-        });
+                $.each(row, function( index, colData ) {
+                      html += '<td>';
+                      html += colData;
+                      html += '</td>';
+                });
+                html += '</tr>';
+          } //end second  half of IF 0
+        }); //end of ZZZZZZ
 
         html += '</tbody>';
         html += '</table>';
-        <!-- alert(html); -->
+        // alert(html); 
         $('#csv-display').append(html);
-      }
-}
+      } // endof IF not undefined
+} // end of function
 
 
 
