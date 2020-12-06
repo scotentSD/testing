@@ -89,23 +89,8 @@ function generateHtmlTable(data) {
         return null;
       } else {
     $.each(data, function( index, row ) {
-      
       //bind header
-      // if(index == 0) {
-      // html += '<thead>';
-      // html += '<tr>';
-      
-      // $.each(row, function( index, colData ) {
-      //   html += '<th>';
-      //   html += colData;
-      //   html += '</th>';
-      // });
-      
-      html += '</tr>';
-      html += '</thead>';
 
-      html += '<tbody>';
-      } else {
       html += '<tr>';
       
       $.each(row, function( index, colData ) {
