@@ -33,14 +33,13 @@ href="../../favicon.ico">
             z-index: 10
         }
 
-
-        .scores_img{
-          position: relative;
-          top: 0px;
-          left: 30px;
-          transform: translate(0px, -30px);
-          z-index: 9
+        /* Bottom left text */
+        .bottom-left {
+          position: absolute;
+          bottom: 50px;
+          left: 20px;
         }
+
     </style>
 </head>
 
@@ -48,7 +47,7 @@ href="../../favicon.ico">
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">Scottish Enterprise V29</a>
+          <a class="navbar-brand" href="index.html">Scottish Enterprise V30</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -142,13 +141,13 @@ function generateHtmlTable(data) {
 
                 switch (varMax) {
                   case 1:
-                    html+= '<td class="scores"><img src="puregreen.png" style="width:100%;" class="scores_img">' + varTot +  " :  " + varMax + '</td>'
+                    html+= '<td class="scores"><img src="puregreen.png" style="width:100%;"> class="bottom-left"' + varTot +  " :  " + varMax + '</div></td>'
                     break;
                   case 2:
-                    html+= '<td class="scores"><img src="pureorange.png" class="scores_img99">' + varTot +  " :  " + varMax + '</td>'
+                    html+= '<td class="scores"><img src="pureorange.png"> class="bottom-left"' + varTot +  " :  " + varMax + '</div></td>'
                     break;
                   case 3:
-                    html+= '<td class="scores99"><img src="purered.png" class="scores_img">' + varTot +  " : " + varMax + '</td>'
+                    html+= '<td class="scores99"><img src="purered.png"><div class="bottom-left"' + varTot +  " : " + varMax + '</div></td>'
                     ;break;
                   default:
 
