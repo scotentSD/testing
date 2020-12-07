@@ -26,6 +26,13 @@ href="../../favicon.ico">
         .pureorange { }
         .puregreen { }
 
+        .other {
+                position: absolute;
+                z-index: 999;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+}
 
         .scores{
             position: absolute;
@@ -147,11 +154,11 @@ function generateHtmlTable(data) {
                     break;
                   case 2:
 
-                    html+= '<td class="scores"><img src="pureorange.png">' + varTot +  " :  " + varMax + '</td>'
+                    html+= '<td class="scores99"><img src="pureorange.png">' + varTot +  " :  " + varMax + '</td>'
                     break;
                   case 3:
 
-                    html+= '<td class="scores"><img src="purered.png">' + varTot +  " : " + varMax + '</td>'
+                    html+= '<td class="scores99"><img src="purered.png">' + varTot +  " : " + varMax + '</td>'
                     ;break;
                   default:
 
