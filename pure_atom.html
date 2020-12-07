@@ -26,26 +26,12 @@ href="../../favicon.ico">
         .pureorange { }
         .puregreen { }
 
-        .other {
-                position: absolute;
-                z-index: 999;
-                margin: 0 auto;
-                left: 0;
-                right: 0;
-}
 
         .scores{
-            position: absolute;
-            z-index: 999;
-            margin: 0 auto;
-            left: 0;
-            right: 0;
-            text-align: center;
-            top: 50%; /* Adjust this value to move the positioned div up and down */
-            background: rgba(0, 0, 0, 0.8);
-            font-family: Arial,sans-serif;
-            color: #fff;
-            width: 60%; /* Set the width of the positioned div */
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
         }
 
 
@@ -150,7 +136,7 @@ function generateHtmlTable(data) {
 
                 switch (varMax) {
                   case 1:
-                    html+= '<td class="scores"><img src="puregreen.png">' + varTot +  " :  " + varMax + '</td>'
+                    html+= '<td class="scores"><img src="puregreen.png" style="width:100%;">' + varTot +  " :  " + varMax + '</td>'
                     break;
                   case 2:
 
