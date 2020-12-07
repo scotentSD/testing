@@ -77,8 +77,7 @@ function generateHtmlTable(data) {
                 html += '<tr>';
 
 
-                var varTot = 0;
-                var varMax= 0;
+                var varTot = 0
                 $.each(row, function( index, colData ) {
 
                       html += '<td>';
@@ -87,19 +86,16 @@ function generateHtmlTable(data) {
                       		//alert('1');
                           html += '<img src="Pure1.png" height="80px">';
                           varTot += 1;
-                          if varMax < 1 then varMax = 1;
                       		break;
                       	case '2':
                       		//alert('2');
                           html += '<img src="Pure2.png" height="80px">';
                       		varTot += 2;
-                          if varMax < 2 then varMax = 2;
                           break;
                       	case '3':
                       		//alert('3');
                           html += '<img src="Pure3.png" height="80px">';
                       		varTot += 3
-                          if varMax < 3 then varMax = 3;
                           ;break;
                         case '0':
                             //alert('0');
@@ -107,14 +103,13 @@ function generateHtmlTable(data) {
                             break;
                       	default:
                       		html += colData;
-
                       }
                       //outputs "jQuery Wins!"
                       html += '</td>';
                 });
                 //alert(varTot);
                 //Add teh total to teh end of the row
-                html+= '<td>' + varTot +  " " + varMax + '</td>'
+                html+= '<td>' + varTot + '</td>'
                 html += '</tr>';
         }); //end of ZZZZZZ
 //zzzzzz
