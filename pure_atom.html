@@ -38,7 +38,9 @@ href="../../favicon.ico">
           position: absolute;
           bottom: 50px;
           left: 70px;
-          z-index: 10
+          z-index: 10;
+          font-size: 1.5em;
+
         }
 
     </style>
@@ -142,13 +144,13 @@ function generateHtmlTable(data) {
 
                 switch (varMax) {
                   case 1:
-                    html+= '<td class="scores"><img src="puregreen.png" style="width:100%;"> <div class="bottom-left">' + varTot +  " :  " + varMax + '</div></td>'
+                    html+= '<td class="scores"><img src="puregreen.png" style="width:100%;"> <div class="bottom-left">' + varTot  + '</div></td>'
                     break;
                   case 2:
-                    html+= '<td class="scores"><img src="pureorange.png"> <div class="bottom-left">' + varTot +  " :  " + varMax + '</div></td>'
+                    html+= '<td class="scores"><img src="pureorange.png"> <div class="bottom-left">' + varTot + '</div></td>'
                     break;
                   case 3:
-                    html+= '<td class="scores"><img src="purered.png"><div class="bottom-left">' + varTot +  " : " + varMax + '</div></td>'
+                    html+= '<td class="scores"><img src="purered.png"><div class="bottom-left">' + varTot  + '</div></td>'
                     ;break;
                   default:
 
