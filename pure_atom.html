@@ -22,9 +22,26 @@ href="../../favicon.ico">
 
 
     <style>
-        .purered::after { content: "<img src='purered.png'>"}
-        .pureorange::after {content: "<img src='pureorange.png'>"}
-        .puregreen::after {content: "<img src='puregreen.png'>"}
+        .purered { }
+        .pureorange { }
+        .puregreen { }
+
+
+        .scores{
+            position: absolute;
+            z-index: 999;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            top: 50%; /* Adjust this value to move the positioned div up and down */
+            background: rgba(0, 0, 0, 0.1);
+            font-family: Arial,sans-serif;
+            color: #fff;
+            width: 60%; /* Set the width of the positioned div */
+        }
+
+
     </style>
 </head>
 
@@ -126,15 +143,15 @@ function generateHtmlTable(data) {
 
                 switch (varMax) {
                   case 1:
-                    html+= '<td class="puregreen">' + varTot +  " :  " + varMax + '</td>'
+                    html+= '<td class="scores"><img src="puregreen.png">' + varTot +  " :  " + varMax + '</td>'
                     break;
                   case 2:
 
-                    html+= '<td class="pureorange"><img src="purered.png">' + varTot +  " :  " + varMax + '</td>'
+                    html+= '<td class="scores"><img src="pureorange.png">' + varTot +  " :  " + varMax + '</td>'
                     break;
                   case 3:
 
-                    html+= '<td class="purered">' + varTot +  " : " + varMax + '</td>'
+                    html+= '<td class="scores"><img src="purered.png">' + varTot +  " : " + varMax + '</td>'
                     ;break;
                   default:
 
