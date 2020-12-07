@@ -28,6 +28,12 @@ href="../../favicon.ico">
 
 
         .scores{
+            position: relative;
+            display: inline-block; /* Make the width of box same as image */
+        }
+
+
+        .scores_img{
           position: relative;
           top: 50%;
           left: 50%;
@@ -42,7 +48,7 @@ href="../../favicon.ico">
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">Scottish Enterprise V23</a>
+          <a class="navbar-brand" href="index.html">Scottish Enterprise V24</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -136,15 +142,15 @@ function generateHtmlTable(data) {
 
                 switch (varMax) {
                   case 1:
-                    html+= '<td class="scores"><img src="puregreen.png" style="width:100%;">' + varTot +  " :  " + varMax + '</td>'
+                    html+= '<td class="scores"><img src="puregreen.png" style="width:100%;" class="scores_img">' + varTot +  " :  " + varMax + '</td>'
                     break;
                   case 2:
 
-                    html+= '<td class="scores"><img src="pureorange.png">' + varTot +  " :  " + varMax + '</td>'
+                    html+= '<td class="scores"><img src="pureorange.png" class="scores_img">' + varTot +  " :  " + varMax + '</td>'
                     break;
                   case 3:
 
-                    html+= '<td class="scores99"><img src="purered.png">' + varTot +  " : " + varMax + '</td>'
+                    html+= '<td class="scores99"><img src="purered.png" class="scores_img">' + varTot +  " : " + varMax + '</td>'
                     ;break;
                   default:
 
