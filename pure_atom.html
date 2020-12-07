@@ -113,7 +113,29 @@ function generateHtmlTable(data) {
                       html += '</td>';
                 });
                 //alert(varTot);
-                //Add teh total to teh end of the row
+                //Add teh total to teh end of the row & choose red, orange or green background
+
+
+
+                switch (varMax) {
+                  case '1':
+                    html+= '<td style="background-image: url('puregreen.png');">' + varTot +  " " + varMax + '</td>'
+                    break;
+                  case '2':
+
+                    html+= '<td style="background-image: url('pureorange.png');">' + varTot +  " " + varMax + '</td>'
+                    break;
+                  case '3':
+
+                    html+= '<td style="background-image: url('purered.png');">' + varTot +  " " + varMax + '</td>'
+                    ;break;
+                  default:
+                    html += colData;
+
+                }
+
+
+
                 html+= '<td>' + varTot +  " " + varMax + '</td>'
                 html += '</tr>';
         }); //end of ZZZZZZ
