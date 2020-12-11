@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Scottish Enterprise</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/starter-template.css" rel="stylesheet">
+    <link href="css/exports-wizard.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Scottish Enterprise</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#contact">Support for Business</a></li>
+            <li><a href="#contact">Learning Zone</a></li>
+            <li><a href="#contact">Our Organisation</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+	     <div class="row">
+		       <div class="col-sm-9">
+
+             <div class="starter-template">
+              <h1>Export Diagnostic</h1>
+              <p class="lead">Tell us about what your business needs. v7 </p>
+
+              <!-- Question -->
+              <!-- Question -->
+              <section class="about-business"  id="a1section">
+		               <p><strong>Have you started exporting yet?</strong></p>
+		               <div class="btn-group" data-toggle="buttons">
+		                   <label class="btn btn-default" id="a1yes">
+		                      <input type="radio" name="a1" id="a1yes_input"> Yes
+		                   </label>
+		                   <label class="btn btn-default" id="a1no">
+		                      <input type="radio" name="a1" id="a1no_input"> No
+		                   </label>
+		               </div>
+              </section>
+              <!-- Question END -->
+              <!-- Question END -->
+
+
+              <!-- Question -->
+              <!-- Question -->
+              <section class="about-business"  id="b1section" hidden>
+		               <p><strong>Do you need help with researching new markets?</strong></p>
+		               <div class="btn-group" data-toggle="buttons">
+		                   <label class="btn btn-default" id="b1yes">
+		                      <input type="radio" name="a1" id="b1yes_input"> Yes
+		                   </label>
+		                   <label class="btn btn-default" id="b1no">
+		                      <input type="radio" name="a1" id="b1no_input"> No
+		                   </label>
+		               </div>
+              </section>
+              <!-- Question END -->
+              <!-- Question END -->
+
+              <!-- Question -->
+              <!-- Question -->
+              <section class="about-business" id="c1section" hidden>
+		               <p><strong>Do you know what countries you want to export to?</strong></p>
+		               <div class="btn-group" data-toggle="buttons">
+		                   <label class="btn btn-default" id="c1yes">  <input type="radio"> Yes  </label>
+		                   <label class="btn btn-default" id="c1no">   <input type="radio"> No    </label>
+		               </div>
+              </section>
+              <!-- Question END -->
+              <!-- Question END -->
+
+
+  <!-- Back/Next Button -->
+  <!-- Back/Next Button -->
+  <div class="actions text-center">
+         <a href="index.html" class="back-link">Back</a>
+         <button id="primary" onClick="parent.location='index2.html'">Next</button>
+       </div>
+  </div>
+  <!-- END of Back/Next Button -->
+  <!-- END of Back/Next Button -->
+
+
+  <!-- Right hand block -->
+  <!-- Right hand block -->
+
+  </div>
+	  <div class="col-sm-3">
+		<div class="panel panel-default">
+                <div class="panel-heading"><h4>Here is what you have told us so far</h4></div>
+      <ul class="list-group">
+		  <li class="list-group-item">
+		   <!-- <p>You have asked us for:</p> -->
+				<script>
+					//if (sessionStorage.advice) { document.write(sessionStorage.advice);}
+        	//if (sessionStorage.networking) { document.write(sessionStorage.networking);}
+        </script>
+
+
+        <!-- These are empty DIV's in teh right hand block that are updsated with code to reflect your choices -->
+        <!-- These are empty DIV's in teh right hand block that are updsated with code to reflect your choices -->
+        <!-- These are empty DIV's in teh right hand block that are updsated with code to reflect your choices -->
+        <div id="a1div"></div>
+				<div id="b1div"></div>
+				<div id="c1div"></div>
+
+			</li>
+		  </ul>
+            </div>
+	</div>
+	    </div>
+    </div><!-- /.container -->
+    <!-- END OF Right hand block -->
+    <!-- END OF Right hand block -->
+
+
+	<!-- On Click event handlers   -->
+  <!-- On Click event handlers   -->
+  <!-- On Click event handlers   -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/export-wizard.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+      <!-- A1 Code -->
+      <script>
+      		$('#a1yes').on('click', function(e){
+			        sessionStorage.setItem("a1", "Yes");
+			        document.getElementById("a1div").innerHTML = "I have started exporting";
+
+              <!-- Hide B1div -->
+              document.getElementById("b1section").style.display = "block";
+              document.getElementById("c1section").style.display = "none";
+      		});
+
+		      $('#a1no').on('click', function(e){
+			        sessionStorage.setItem("a1", "No");
+			        document.getElementById("a1div").innerHTML = "I have not started exporting yet";
+
+              <!-- Hide c1div -->
+              document.getElementById("b1section").style.display = "none";
+              document.getElementById("c1section").style.display = "block";
+
+      		});
+
+	  </script>
+
+    <script>
+        $('#b1yes').on('click', function(e){
+            sessionStorage.setItem("b1", "Yes");
+            document.getElementById("b1div").innerHTML = "I need help researching New Markets";
+
+            <!-- set the NEXT button link -->
+            document.getElementById("primary").onclick = function () {parent.location= "indexC.html";};
+        });
+
+        $('#b1no').on('click', function(e){
+            sessionStorage.setItem("b1", "No");
+            document.getElementById("b1div").innerHTML = "I do not need help researching New Markets";
+
+
+            <!-- set the NEXT button link -->
+            document.getElementById("primary").onclick = function () {parent.location= "indexD.html";};
+        });
+
+  </script>
+
+  <script>
+      $('#c1yes').on('click', function(e){
+          sessionStorage.setItem("c1", "Yes");
+          document.getElementById("c1div").innerHTML = "I know which countries I am interested in exporting to";
+
+          <!-- set the NEXT button link -->
+          document.getElementById("primary").onclick = function () {parent.location= "indexF.html";};
+      });
+
+      $('#c1no').on('click', function(e){
+          sessionStorage.setItem("c1", "No");
+          document.getElementById("c1div").innerHTML = "I do not know what countries I want to export to";
+
+          <!-- set the NEXT button link -->
+          document.getElementById("primary").onclick = function () {parent.location= "indexG.html";};
+      });
+
+</script>
+    <!-- End of Code -->
+
+	  </body>
+</html>
