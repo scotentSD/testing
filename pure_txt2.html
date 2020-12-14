@@ -91,7 +91,8 @@ function getText() {
 //alert("triggered");
 
     var val = document.getElementById("pureScore").value;
-      $('pureScore').hide();
+      $('#pureScore').hide();
+      $('#pureButton').hide();
       if (val != "") {
         alert(val);
           var data = $.csv.toArrays(val);
