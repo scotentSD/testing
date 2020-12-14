@@ -70,7 +70,7 @@
   <div class="row">
    <div class="col-sm-9">
       <div class="starter-template">
-        <h1>PURE SCORING GENERATOR</h1>
+        <h1>PURE SCORE</h1>
       </div>
     </div>
   </div>
@@ -89,7 +89,6 @@
 <script type="text/javascript">
 function getText() {
 //alert("triggered");
-
     var val = document.getElementById("pureScore").value;
       $('#pureScore').hide();
       $('#pureButton').hide();
@@ -101,12 +100,11 @@ function getText() {
   }
 
 
-
-
-
   function generateHtmlTable(data) {
+      var colCount = 0;
+      var runTot = 0;
+      var runMax = 0;
       var html = '<table  class="table table-condensed table-hover table-striped"><tbody>';
-
         //do nothing if teh array is empty
         if(typeof(data[0]) === 'undefined') {
           return null;
@@ -114,8 +112,6 @@ function getText() {
             //zzzzzz
           $.each(data, function( index, row ) {  //ZZZZZZ
                   html += '<tr>';
-
-
                   var varTot = 0;
                   var varMax= 0;
                   $.each(row, function( index, colData ) {
@@ -146,7 +142,6 @@ function getText() {
                               break;
                         	default:
                         		html += colData;
-
                         }
                         //outputs "jQuery Wins!"
                         html += '</td>';
@@ -154,7 +149,11 @@ function getText() {
                   //alert(varTot);
                   //Add teh total to teh end of the row & choose red, orange or green background
 
+                  if (varMax > runMax){runMax = varMax};
+                  //alert(runMax)
 
+                  runTot = runTot + varTot;
+                  //alert(runTot);
 
                   switch (varMax) {
                     case 1:
@@ -169,8 +168,6 @@ function getText() {
                     default:
 
                   }
-
-
                   html += '</tr>';
           }); //end of ZZZZZZ
   //zzzzzz
@@ -180,16 +177,24 @@ function getText() {
           // alert(html);
           $('#csv-display').append(html);
         } // endof IF not undefined
+        alert(runMax);
+        alert(runTot);
   } // end of function
+
+
+
 </script>
 
 <!-- end of container div -->
 </div>
+
+<hr/>
+<!-- Explanatory Key -->
+<!-- Explanatory Key -->
+<!-- Explanatory Key -->
 <div class="container">
   <div class="row">
    <div class="col-sm-9">
-
-
         <table>
           <tr>
             <td style="padding-bottom:10px;"><img src="Pure1.png" height="100px"></td>
