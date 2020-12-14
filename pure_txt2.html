@@ -169,6 +169,12 @@ function getText() {
 
                   }
                   html += '</tr>';
+
+				  html += '<tr><td  class="scores">';
+				  html += runTot;
+				  html += '</td></tr>';
+                        alert(runMax);
+        				alert(runTot);
           }); //end of ZZZZZZ
   //zzzzzz
   //close off the table
@@ -177,8 +183,7 @@ function getText() {
           // alert(html);
           $('#csv-display').append(html);
         } // endof IF not undefined
-        alert(runMax);
-        alert(runTot);
+
   } // end of function
 
 
