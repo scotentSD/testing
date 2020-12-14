@@ -50,12 +50,6 @@
 
 
 
-
-
-
-
-
-
 <body>
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -88,14 +82,16 @@
 </div>
 
 <textarea name="pureScore" id="pureScore" placeholder="Enter the text..."></textarea>
-<div class="actions text-center">
+<div class="actions text-center" id="pureButton">
       <button id="primary" onClick="getText()">Generate Pure Score</button>
 </div>
 
 <script type="text/javascript">
 function getText() {
 //alert("triggered");
+
     var val = document.getElementById("pureScore").value;
+      $('pureScore').hide();
       if (val != "") {
         alert(val);
           var data = $.csv.toArrays(val);
@@ -110,11 +106,11 @@ function getText() {
   function generateHtmlTable(data) {
       var html = '<table  class="table table-condensed table-hover table-striped"><tbody>';
 
-  //do nothing if teh array is empty
+        //do nothing if teh array is empty
         if(typeof(data[0]) === 'undefined') {
           return null;
         } else {
-  //zzzzzz
+            //zzzzzz
           $.each(data, function( index, row ) {  //ZZZZZZ
                   html += '<tr>';
 
@@ -184,8 +180,6 @@ function getText() {
           $('#csv-display').append(html);
         } // endof IF not undefined
   } // end of function
-
-
 </script>
 
 <!-- end of container div -->
