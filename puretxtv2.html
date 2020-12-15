@@ -24,19 +24,27 @@
     <!-- jquery-csv   for parsing csv documents-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
     <style>
+        .purered { }
+        .pureorange { }
+        .puregreen { }
+
+
         .scores{
          position: relative;
          text-align: center;
          color: white;
+/* mk trying this out
          display: inline-block; /* Make the width of box same as image */
+
         }
 
         .scores_100{  position: relative;
          text-align: center;
          color: white;
          width: 100px;
+		/* mk trying this out
          display: inline-block; /* Make the width of box same as image */
-		}
+}
 
         /* Bottom left text */
         .bottom-left {
@@ -94,8 +102,8 @@
 <div class="container">
   <div class="row">
    <div class="col-sm-12">
-      <div class="starter-template" >
-        <h1 id="divpureHead">PURE SCORE</h1>
+      <div class="starter-template">
+        <h1>PURE SCORE</h1>
       </div>
     </div>
   </div>
@@ -105,10 +113,7 @@
 <div id="csv-display">
 </div>
 
-<div><textarea name="pureHead" id="pureHead" placeholder="Heading nbame if needed...." rows="1" cols="50"></textarea></div>
-<div><textarea name="pureScore" id="pureScore" placeholder="Enter the text & scores..." rows="4" cols="100"></textarea></div>
-<div><textarea name="pureFoot" id="pureFoot" placeholder="Footer if needed...." rows="1" cols="150"></textarea></div>
-
+<textarea name="pureScore" id="pureScore" placeholder="Enter the text..." rows="4" cols="100"></textarea>
 <div class="actions text-center" id="pureButton">
       <button id="primary" onClick="getText()">Generate Pure Score</button>
 </div>
@@ -117,39 +122,21 @@
 function getText() {
 //alert("triggered");
     var val = document.getElementById("pureScore").value;
-    var valHead = document.getElementById("pureHead").value;
-    var valFoot = document.getElementById("pureFoot").value;
-
-    //alert(valFoot);
-    //alert(valHead):
-
-	  
-	  $('#pureHead').hide();
       $('#pureScore').hide();
       $('#pureButton').hide();
-	  $('#pureFoot').hide();
-
       if (val != "") {
         // alert(val);
           var data = $.csv.toArrays(val);
           generateHtmlTable(data);
         }
-      }
-
-      if (valHead != ""){
-			$('#divpureHead').html(valHead)
-      }
-
- 	  if (valFoot != ""){
-			$('#divpureFoot').html(valFoot)
-      }
+  }
 
   function generateHtmlTable(data) {
       var colCount = 0;
       var runTot = 0;
       var runMax = 0;
       var html = '<table  class="table table-condensed table-hover table-striped"><tbody>';
-        //do nothing if the array is empty
+        //do nothing if teh array is empty
         if(typeof(data[0]) === 'undefined') {
           return null;
         } else {
@@ -159,69 +146,73 @@ function getText() {
                   var varTot = 0;
                   var varMax= 0;
                   $.each(row, function( index, colData ) {
+
                         //html += '<td>';
-		                        switch (colData) {
-		                        	case '1':
-		                        		//alert('1');
-		                                html += '<td style="width:75px;"><img src="Pure1.png" height="100px">';
-		                                varTot += 1;
-		                             if (varMax < 1){varMax = 1;};
-		                        	 break;
-		                          	case '2':
-		                        		//alert('2');
-		                                html += '<td style="width:75px;"><img src="Pure2.png" height="100px">';
-		                        		varTot += 2;
-		                             if (varMax < 2){varMax = 2;};
-		                             break;
-		                        	case '3':
-		                        		//alert('3');
-		                                html += '<td style="width:75px;"><img src="Pure3.png" height="100px">';
-		                        		varTot += 3
-		                             if (varMax < 3){varMax = 3;};
-		                             break;
-		                            case '0':
-		                              //alert('0');
-		                              //html += '<img src="Pure3.png" height="100px">';
-		                               html += '<td style="width:75px;">  ' 
-		                             break;
-		                        	default:
-		                        	html += '<td style="width:200px;">' +colData;
-		                        }
+                        switch (colData) {
+                        	case '1':
+                        		//alert('1');
+                            html += '<td style="width:75px;"><img src="Pure1.png" height="100px">';
+                            varTot += 1;
+                            if (varMax < 1){varMax = 1;};
+                        		break;
+                        	case '2':
+                        		//alert('2');
+                            html += '<td style="width:75px;"><img src="Pure2.png" height="100px">';
+                        		varTot += 2;
+                            if (varMax < 2){varMax = 2;};
+                            break;
+                        	case '3':
+                        		//alert('3');
+                            html += '<td style="width:75px;"><img src="Pure3.png" height="100px">';
+                        		varTot += 3
+                            if (varMax < 3){varMax = 3;};
+                            ;break;
+                          case '0':
+                              //alert('0');
+                              //html += '<img src="Pure3.png" height="100px">';
+                              html += '<td style="width:75px;">  ' 
+                              break;
+                        	  default:
+                        	  html += '<td style="width:200px;">' +colData;
+                        }
                         //outputs "jQuery Wins!"
                         html += '</td>';
                   });
-
-
                   //alert(varTot);
-                  //Add the total to teh end of the row & choose red, orange or green background
+                  //Add teh total to teh end of the row & choose red, orange or green background
 
                   if (varMax > runMax){runMax = varMax};
                   //alert(runMax)
+
                   runTot = runTot + varTot;
                   //alert(runTot);
-			                  switch (varMax) {
-			                    case 1:
-			                      html+= '<td class="boxScore"><img src="puregreen.png"> <div class="textScore">' + varTot  + '</div></td>'
-			                      // html+= '<td class="scores"><img src="puregreen.png"> <div class="bottom-left">' + varTot  + '</div></td>'
-			                      break;
-			                    case 2:
-			                      html+= '<td class="boxScore"><img src="pureorange.png"> <div class="textScore">' + varTot + '</div></td>'
-			                      // html+= '<td class="scores"><img src="pureorange.png"> <div class="bottom-left">' + varTot + '</div></td>'
-			                      break;
-			                    case 3:
-			                      html+= '<td class="boxScore"><div class="boxScore"><img src="purered.png"><div class="textScore">' + varTot  + '</div></div></td>'
-			                      // html+= '<td class="scores"><img src="purered.png"><div class="bottom-left">' + varTot  + '</div></td>'
-			                      ;break;
-			                    default:
-			                  }
+
+                  switch (varMax) {
+                    case 1:
+                      html+= '<td class="boxScore"><img src="puregreen.png"> <div class="textScore">' + varTot  + '</div></td>'
+                      // html+= '<td class="scores"><img src="puregreen.png"> <div class="bottom-left">' + varTot  + '</div></td>'
+                      break;
+                    case 2:
+                      html+= '<td class="boxScore"><img src="pureorange.png"> <div class="textScore">' + varTot + '</div></td>'
+                      // html+= '<td class="scores"><img src="pureorange.png"> <div class="bottom-left">' + varTot + '</div></td>'
+                      break;
+                    case 3:
+                      html+= '<td class="boxScore"><div class="boxScore"><img src="purered.png"><div class="textScore">' + varTot  + '</div></div></td>'
+                      // html+= '<td class="scores"><img src="purered.png"><div class="bottom-left">' + varTot  + '</div></td>'
+
+                      ;break;
+                    default:
+
+                  }
                   html += '</tr>';
+
 
                   //Totals
 				  //html += '<tr><td>';
 				  //html += runTot;
 				  //html += '</td></tr>';
-                  //alert(runMax);
-        		  //alert(runTot);
+                        //alert(runMax);
+        				//alert(runTot);
           }); //end of ZZZZZZ
   //zzzzzz
   //close off the table
@@ -239,8 +230,6 @@ function getText() {
 
 <!-- end of container div -->
 </div>
-
-<div id="puredivFoot"></div>
 
 <hr/>
 <!-- Explanatory Key -->
