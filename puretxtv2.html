@@ -23,19 +23,18 @@
 
     <!-- jquery-csv   for parsing csv documents-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+    
     <style>
         .purered { }
         .pureorange { }
         .puregreen { }
 
-
         .scores{
          position: relative;
          text-align: center;
          color: white;
-/* mk trying this out
+		/* mk trying this out
          display: inline-block; /* Make the width of box same as image */
-
         }
 
         .scores_100{  position: relative;
@@ -54,10 +53,8 @@
           right: 45%;
           z-index: 10;
           font-size: 1.7em;
-
           text-align: center;
         }
-
 
        .boxScore{
         	position: relative;
@@ -79,9 +76,9 @@
         	width: 60%; /* Set the width of the positioned div */
         	font-size: 1.9em;
     	}
-
     </style>
 </head>
+
 
 <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -148,6 +145,8 @@ function getText() {
                   $.each(row, function( index, colData ) {
 
                         //html += '<td>';
+
+                        //Switch: Case statement to parse Scores 1,2,3,0 or Text
                         switch (colData) {
                         	case '1':
                         		//alert('1');
