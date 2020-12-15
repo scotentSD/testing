@@ -94,8 +94,8 @@
 <div class="container">
   <div class="row">
    <div class="col-sm-12">
-      <div class="starter-template" >
-        <h1 id="divpureHead">PURE SCORE</h1>
+      <div class="starter-template" id="divpureHead">
+        <h1>PURE SCORECARD</h1>
       </div>
     </div>
   </div>
@@ -105,9 +105,9 @@
 <div id="csv-display">
 </div>
 
-<div><textarea name="pureHead" id="pureHead" placeholder="Heading nbame if needed...." rows="1" cols="50"></textarea></div>
-<div><textarea name="pureScore" id="pureScore" placeholder="Enter the text & scores..." rows="4" cols="100"></textarea></div>
-<div><textarea name="pureFoot" id="pureFoot" placeholder="Footer if needed...." rows="1" cols="150"></textarea></div>
+<!-- <div><textarea name="pureHead" id="pureHead" placeholder="Heading nbame if needed...." rows="1" cols="50"></textarea></div> -->
+   <div><textarea name="pureScore" id="pureScore" placeholder="Enter the text & scores..." rows="4" cols="100"></textarea></div>
+<!-- <div><textarea name="pureFoot" id="pureFoot" placeholder="Footer if needed...." rows="1" cols="150"></textarea></div> -->
 
 <div class="actions text-center" id="pureButton">
       <button id="primary" onClick="getText()">Generate Pure Score</button>
@@ -117,17 +117,16 @@
 function getText() {
 //alert("triggered");
     var val = document.getElementById("pureScore").value;
-    var valHead = document.getElementById("pureHead").value;
-    var valFoot = document.getElementById("pureFoot").value;
+	// var valHead = document.getElementById("pureHead").value;
+	// var valFoot = document.getElementById("pureFoot").value;
 
     //alert(valFoot);
     //alert(valHead):
-
 	  
-	  $('#pureHead').hide();
+	  //$('#pureHead').hide();
       $('#pureScore').hide();
       $('#pureButton').hide();
-	  $('#pureFoot').hide();
+	  //$('#pureFoot').hide();
 
       if (val != "") {
         // alert(val);
@@ -136,14 +135,7 @@ function getText() {
         }
       }
 
-      if (valHead != ""){
-			$('#divpureHead').html(valHead)
-      }
-
- 	  if (valFoot != ""){
-			$('#divpureFoot').html(valFoot)
-      }
-
+  
   function generateHtmlTable(data) {
       var colCount = 0;
       var runTot = 0;
@@ -250,15 +242,15 @@ function getText() {
   <div class="row">
    <div class="col-sm-9">
         <table>
-          <tr>
+          <tr style="padding-bottom:50px; margin-bottom: 50px" >
             <td style="padding-bottom:10px;"><img src="Pure1.png" height="100px"></td>
             <td style="padding-left:10px;">The step can be accomplished easily by the target user, </br>due to low cognitive load or because it’s a known pattern, such as the acceptance of a terms-of-service agreement.</td>
           </tr>
-          <tr>
+          <tr style="padding-bottom:50px; margin-bottom: 50px">
             <td style="padding-bottom:10px;"><img src="Pure2.png" height="100px"></td>
             <td style="padding-left:10px;">The step requires a notable degree of cognitive load (or physical effort) </br>by the target user, but can generally be accomplished with some effort.</td>
           </tr>
-          <tr>
+          <tr style="padding-bottom:50px; margin-bottom: 50px">
             <td style="padding-bottom:10px;"><img src="Pure3.png" height="100px"></td>
             <td style="padding-left:10px;">The step is difficult for the target user, due to significant cognitive load or confusion; </br>some target users would likely fail or abandon the task at this point.</td>
           </tr>
