@@ -68,7 +68,8 @@
     </style>
 </head>
 
-<body>
+<body onload="$('#pureKey').show(); $('#pureFooter').hide();">
+
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -107,6 +108,10 @@
 </div>
 
 <script type="text/javascript">
+
+
+
+
 function getText() {
 //alert("triggered");
     var val = document.getElementById("pureScore").value;
@@ -119,6 +124,8 @@ function getText() {
 	  //$('#pureHead').hide();
       $('#pureScore').hide();
       $('#pureButton').hide();
+      $('#pureKey').hide();
+      $('#pureFooter').show();
 	  //$('#pureFoot').hide();
 
       if (val != "") {
@@ -167,10 +174,10 @@ function getText() {
 		                            case '0':
 		                              //alert('0');
 		                              //html += '<img src="Pure3.png" height="100px">';
-		                               html += '<td style="width:75px; padding-bottom:10px; padding-top:10px; border-top-width: 0px;">  ' 
+		                               html += '<td style="width:75px; padding-bottom:10px; padding-top:10px; padding-left:15px;  border-top-width: 0px;">  ' 
 		                             break;
 		                        	default:
-		                        	html += '<td style="width:200px; padding-bottom:10px; padding-top:10px; border-top-width: 0px; font-size: 1.5em;">' +colData;
+		                        	html += '<td style="width:200px; padding-bottom:10px; padding-top:10px; border-top-width: 0px;  padding-left:15px;  font-size: 1.5em;">' +colData;
 		                        }
                         //outputs "jQuery Wins!"
                         html += '</td>';
@@ -225,13 +232,26 @@ function getText() {
 <!-- end of container div -->
 </div>
 
+
+<!-- footer -->
+<div class="container" id="pureFooter" onclick="$('#pureKey').toggle();">
+  <div class="row">
+   <div class="col-sm-9">
+        <table>
+          <tr>
+            <td style="padding-left:10px; font-size: 1.2em;">footer text</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 <div id="puredivFoot"></div>
 
 <hr/>
 <!-- Explanatory Key -->
 <!-- Explanatory Key -->
 <!-- Explanatory Key -->
-<div class="container">
+<div class="container" id="pureKey">
   <div class="row">
    <div class="col-sm-9">
         <table>
