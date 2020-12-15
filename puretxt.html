@@ -155,29 +155,29 @@ function getText() {
 		                        switch (colData) {
 		                        	case '1':
 		                        		//alert('1');
-		                                html += '<td style="width:75px;"><img src="Pure1.png" height="100px">';
+		                                html += '<td style="width:75px; padding-bottom:20px; padding-top:20px"><img src="Pure1.png" height="100px">';
 		                                varTot += 1;
 		                             if (varMax < 1){varMax = 1;};
 		                        	 break;
 		                          	case '2':
 		                        		//alert('2');
-		                                html += '<td style="width:75px;"><img src="Pure2.png" height="100px">';
+		                                html += '<td style="width:75px; padding-bottom:20px; padding-top:20px"><img src="Pure2.png" height="100px">';
 		                        		varTot += 2;
 		                             if (varMax < 2){varMax = 2;};
 		                             break;
 		                        	case '3':
 		                        		//alert('3');
-		                                html += '<td style="width:75px;"><img src="Pure3.png" height="100px">';
+		                                html += '<td style="width:75px; padding-bottom:20px; padding-top:20px"><img src="Pure3.png" height="100px">';
 		                        		varTot += 3
 		                             if (varMax < 3){varMax = 3;};
 		                             break;
 		                            case '0':
 		                              //alert('0');
 		                              //html += '<img src="Pure3.png" height="100px">';
-		                               html += '<td style="width:75px;">  ' 
+		                               html += '<td style="width:75px; padding-bottom:20px; padding-top:20px">  ' 
 		                             break;
 		                        	default:
-		                        	html += '<td style="width:200px;">' +colData;
+		                        	html += '<td style="width:200px; padding-bottom:20px; padding-top:20px">' +colData;
 		                        }
                         //outputs "jQuery Wins!"
                         html += '</td>';
@@ -193,15 +193,15 @@ function getText() {
                   //alert(runTot);
 			                  switch (varMax) {
 			                    case 1:
-			                      html+= '<td class="boxScore"><img src="puregreen.png"> <div class="textScore">' + varTot  + '</div></td>'
+			                      html+= '<td class="boxScore" style="padding-bottom:20px; padding-top:20px"><img src="puregreen.png"> <div class="textScore">' + varTot  + '</div></td>'
 			                      // html+= '<td class="scores"><img src="puregreen.png"> <div class="bottom-left">' + varTot  + '</div></td>'
 			                      break;
 			                    case 2:
-			                      html+= '<td class="boxScore"><img src="pureorange.png"> <div class="textScore">' + varTot + '</div></td>'
+			                      html+= '<td class="boxScore" style="padding-bottom:20px; padding-top:20px"><img src="pureorange.png"> <div class="textScore">' + varTot + '</div></td>'
 			                      // html+= '<td class="scores"><img src="pureorange.png"> <div class="bottom-left">' + varTot + '</div></td>'
 			                      break;
 			                    case 3:
-			                      html+= '<td class="boxScore"><div class="boxScore"><img src="purered.png"><div class="textScore">' + varTot  + '</div></div></td>'
+			                      html+= '<td class="boxScore" style="padding-bottom:20px; padding-top:20px"><div class="boxScore"><img src="purered.png"><div class="textScore">' + varTot  + '</div></div></td>'
 			                      // html+= '<td class="scores"><img src="purered.png"><div class="bottom-left">' + varTot  + '</div></td>'
 			                      ;break;
 			                    default:
@@ -242,15 +242,15 @@ function getText() {
   <div class="row">
    <div class="col-sm-9">
         <table>
-          <tr style="padding-bottom:50px; margin-bottom: 50px" >
+          <tr>
             <td style="padding-bottom:10px;"><img src="Pure1.png" height="100px"></td>
             <td style="padding-left:10px;">The step can be accomplished easily by the target user, </br>due to low cognitive load or because it’s a known pattern, such as the acceptance of a terms-of-service agreement.</td>
           </tr>
-          <tr style="padding-bottom:50px; margin-bottom: 50px">
+          <tr>
             <td style="padding-bottom:10px;"><img src="Pure2.png" height="100px"></td>
             <td style="padding-left:10px;">The step requires a notable degree of cognitive load (or physical effort) </br>by the target user, but can generally be accomplished with some effort.</td>
           </tr>
-          <tr style="padding-bottom:50px; margin-bottom: 50px">
+          <tr>
             <td style="padding-bottom:10px;"><img src="Pure3.png" height="100px"></td>
             <td style="padding-left:10px;">The step is difficult for the target user, due to significant cognitive load or confusion; </br>some target users would likely fail or abandon the task at this point.</td>
           </tr>
