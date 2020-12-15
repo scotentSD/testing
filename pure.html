@@ -8,19 +8,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
     <title>Scottish Enterprise</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="css/starter-template.css" rel="stylesheet">
     <link href="css/exports-wizard.css" rel="stylesheet">
-
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <!-- jquery-csv   for parsing csv documents-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
     <style>
@@ -30,7 +26,6 @@
          color: white;
          display: inline-block; /* Make the width of box same as image */
         }
-
         /* Bottom left text */
         .bottom-left {
           position: absolute;
@@ -39,23 +34,21 @@
           right: 45%;
           z-index: 10;
           font-size: 1.7em;
-
           text-align: center;
         }
-
 
        .boxScore{
         	position: relative;
         	display: inline-block; /* Make the width of box same as image */
 
-    	}
-    
+    	   }
+
     	.boxScore .textScore{
         	position: absolute;
         	z-index: 999;
         	margin: 0 auto;
         	left: 0;
-        	right: 0;        
+        	right: 0;
         	text-align: center;
         	top: 20%; /* Adjust this value to move the positioned div up and down */
         	background: rgba(0, 0, 0, 0.0);
@@ -120,7 +113,7 @@ function getText() {
 
     //alert(valFoot);
     //alert(valHead):
-	  
+
 	  //$('#pureHead').hide();
       $('#pureScore').hide();
       $('#pureButton').hide();
@@ -135,7 +128,7 @@ function getText() {
         }
       }
 
-  
+
   function generateHtmlTable(data) {
       var colCount = 0;
       var runTot = 0;
@@ -174,7 +167,7 @@ function getText() {
 		                            case '0':
 		                              //alert('0');
 		                              //html += '<img src="Pure3.png" height="100px">';
-		                               html += '<td style="width:75px; padding-bottom:10px; padding-top:10px; padding-left:15px;  border-top-width: 0px;">  ' 
+		                               html += '<td style="width:75px; padding-bottom:10px; padding-top:10px; padding-left:15px;  border-top-width: 0px;">  '
 		                             break;
 		                        	default:
 		                        	html += '<td style="width:200px; padding-bottom:10px; padding-top:10px; border-top-width: 0px;  padding-left:15px;  font-size: 1.5em;">' +colData;
@@ -224,7 +217,7 @@ function getText() {
         } // endof IF not undefined
 
   } // end of function
-  
+
 </script>
 
 <!-- end of container div -->
