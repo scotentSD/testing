@@ -61,7 +61,7 @@
     </style>
 </head>
 
-<body onload="$('#pureKey').show(); $('#pureFooter').hide();">
+<body onload="$('#pureKey').show(); $('#pureFooter').hide(); $('#pureHead').show();  $('#txtpureHead').hide();      ">
 
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -85,6 +85,7 @@
       <div class="starter-template" id="divpureHead">
         EASE OF USE SCORECARD
         <h1 id="txtpureHead">WEBSITE</h1>
+        <div><textarea name="pureHead" id="pureHead" placeholder="Enter the heading..." rows="1" cols="50"></textarea></div>
       </div>
     </div>
   </div>
@@ -93,10 +94,8 @@
 
 <div id="csv-display">
 </div>
-
-<!-- <div><textarea name="pureHead" id="pureHead" placeholder="Heading nbame if needed...." rows="1" cols="50"></textarea></div> -->
+ 
    <div><textarea name="pureScore" id="pureScore" placeholder="Enter the text & scores..." rows="4" cols="100"></textarea></div>
-<!-- <div><textarea name="pureFoot" id="pureFoot" placeholder="Footer if needed...." rows="1" cols="150"></textarea></div> -->
 
 <div class="actions text-left" id="pureButton">
       <button id="primary" onClick="getText()">Generate Pure Score</button>
@@ -107,21 +106,16 @@
 function getText() {
 //alert("triggered");
     var val = document.getElementById("pureScore").value;
-	// var valHead = document.getElementById("pureHead").value;
-	// var valFoot = document.getElementById("pureFoot").value;
-
-    //alert(valFoot);
-    //alert(valHead):
-
-	  //$('#pureHead').hide();
+      $('#pureHead').hide();
+      $('#txtpureHead').show();
+      $('#txtpureHead').html($('#pureHead').val());     
       $('#pureScore').hide();
       $('#pureButton').hide();
       $('#pureKey').hide();
       $('#pureFooter').show();
-	  //$('#pureFoot').hide();
 
+<!-- TAKE THE PURE SCORES AND GENERATE THE TABLE -->
       if (val != "") {
-        // alert(val);
           var data = $.csv.toArrays(val);
           generateHtmlTable(data);
         }
