@@ -147,7 +147,7 @@ function getText() {
         } else {
             //zzzzzz
           $.each(data, function( index, row ) {  //ZZZZZZ
-                  html += '<tr>';
+                  html += '<tr style="border-top-width: 50px;">';
                   var varTot = 0;
                   var varMax= 0;
                   $.each(row, function( index, colData ) {
@@ -155,29 +155,29 @@ function getText() {
 		                        switch (colData) {
 		                        	case '1':
 		                        		//alert('1');
-		                                html += '<td style="width:75px; padding-bottom:20px; padding-top:20px"><img src="Pure1.png" height="100px">';
+		                                html += '<td style="width:75px; padding-bottom:10px; padding-top:10px; border-top-width: 0px;"><img src="Pure1.png" height="100px">';
 		                                varTot += 1;
 		                             if (varMax < 1){varMax = 1;};
 		                        	 break;
 		                          	case '2':
 		                        		//alert('2');
-		                                html += '<td style="width:75px; padding-bottom:20px; padding-top:20px"><img src="Pure2.png" height="100px">';
+		                                html += '<td style="width:75px; padding-bottom:10px; padding-top:10px; border-top-width: 0px;"><img src="Pure2.png" height="100px">';
 		                        		varTot += 2;
 		                             if (varMax < 2){varMax = 2;};
 		                             break;
 		                        	case '3':
 		                        		//alert('3');
-		                                html += '<td style="width:75px; padding-bottom:20px; padding-top:20px"><img src="Pure3.png" height="100px">';
+		                                html += '<td style="width:75px; padding-bottom:10px; padding-top:10px; border-top-width: 0px;"><img src="Pure3.png" height="100px">';
 		                        		varTot += 3
 		                             if (varMax < 3){varMax = 3;};
 		                             break;
 		                            case '0':
 		                              //alert('0');
 		                              //html += '<img src="Pure3.png" height="100px">';
-		                               html += '<td style="width:75px; padding-bottom:20px; padding-top:20px">  ' 
+		                               html += '<td style="width:75px; padding-bottom:10px; padding-top:10px; border-top-width: 0px;">  ' 
 		                             break;
 		                        	default:
-		                        	html += '<td style="width:200px; padding-bottom:20px; padding-top:20px">' +colData;
+		                        	html += '<td style="width:200px; padding-bottom:10px; padding-top:10px; border-top-width: 0px;">' +colData;
 		                        }
                         //outputs "jQuery Wins!"
                         html += '</td>';
@@ -193,15 +193,15 @@ function getText() {
                   //alert(runTot);
 			                  switch (varMax) {
 			                    case 1:
-			                      html+= '<td class="boxScore" style="padding-bottom:20px; padding-top:20px"><img src="puregreen.png"> <div class="textScore">' + varTot  + '</div></td>'
+			                      html+= '<td class="boxScore" style="padding-bottom:10px; padding-top:10px; border-top-width: 0px;"><img src="puregreen.png"> <div class="textScore">' + varTot  + '</div></td>'
 			                      // html+= '<td class="scores"><img src="puregreen.png"> <div class="bottom-left">' + varTot  + '</div></td>'
 			                      break;
 			                    case 2:
-			                      html+= '<td class="boxScore" style="padding-bottom:20px; padding-top:20px"><img src="pureorange.png"> <div class="textScore">' + varTot + '</div></td>'
+			                      html+= '<td class="boxScore" style="padding-bottom:10px; padding-top:10px; border-top-width: 0px;"><img src="pureorange.png"> <div class="textScore">' + varTot + '</div></td>'
 			                      // html+= '<td class="scores"><img src="pureorange.png"> <div class="bottom-left">' + varTot + '</div></td>'
 			                      break;
 			                    case 3:
-			                      html+= '<td class="boxScore" style="padding-bottom:20px; padding-top:20px"><div class="boxScore"><img src="purered.png"><div class="textScore">' + varTot  + '</div></div></td>'
+			                      html+= '<td class="boxScore" style="padding-bottom:10px; padding-top:10px; border-top-width: 0px;"><div class="boxScore"><img src="purered.png"><div class="textScore">' + varTot  + '</div></div></td>'
 			                      // html+= '<td class="scores"><img src="purered.png"><div class="bottom-left">' + varTot  + '</div></td>'
 			                      ;break;
 			                    default:
