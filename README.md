@@ -21,7 +21,6 @@
   <a href="https://blog.getbootstrap.com/">Blog</a>
 </p>
 
-
 ## Table of contents
 
 - [Quick start](#quick-start)
