@@ -1,0 +1,53 @@
+﻿1st,2nd,3rd,
+Sector,111,,
+Sector,222,,
+Sector,333,,
+Sector,444,,
+Sector,555,,
+Sector,666,,
+Sector,777,,
+Sector,888,,
+Sector,999,,
+Sector,1000,,
+Sector,1100,,
+Size,Pre-Start,Academic Spinout,
+Size,Pre-Start,R & D,
+Size,Startup,,
+Size,SME,Domestic,
+Size,SME,Early Exporter,EU
+Size,SME,Early Exporter,Americas
+Size,SME,Early Exporter,South America
+Size,SME,Early Exporter,Africa
+Size,SME,Early Exporter,Asia
+Size,SME,Early Exporter,Australasia
+Size,SME,Early Exporter,World
+Size,SME,Exporter,
+Size,Large,,
+Issue,Maintain Jobs,,
+Issue,Create Jobs,,
+Issue,Reduce Carbon,,
+Issue,New Sectors,,
+Issue,Export ,,
+Issue,Improve productivity,,
+Issue,New services/products,,
+People,A11Y,Visual,
+People,A11Y,Cognitive,
+People,A11Y,Physical,
+People,Ethnicity,Language,English
+People,Ethnicity,Language,English not first language
+People,Ethnicity,Language,No English
+People,Ethnicity,Culture,
+People,Experience,Existing Business Owner,
+People,Experience,New Business Owner,
+People,Under Represented,Disabled,
+People,Under Represented,Long Term Unemployed,
+People,Under Represented,Carer,
+People,Under Represented,Single Parent,
+Business Stage,Prestart,,
+Business Stage,Startup,,
+Business Stage,Lifestyle,,
+Business Stage,Entrapeneural Growth,,
+Business Stage,Managed Growth,,
+Business Stage,Beginning to Export,,
+Business Stage,Exporter,,
+Business Stage,Adding Products / Services,,
