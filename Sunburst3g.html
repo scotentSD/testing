@@ -21,68 +21,124 @@ text {
 // by the help of stackoverflow user Lars Kotthoff, I made some changes and now the code has embedded data
 
 var flaredata = {"name": "All","children": [{
-      name: "EIS",
+      name: "Sectors",
       children: [
-        { name: "A1", size: 1 },
-        { name: "A2", size: 1 }
+        { name: "111", size: 1 },
+        { name: "222", size: 1 },
+        { name: "333", size: 1 },
+        { name: "444", size: 1 },
+        { name: "555", size: 1 },
+        { name: "666", size: 1 },
+        { name: "777", size: 1 },
+        { name: "888", size: 1 },
+        { name: "999", size: 1 },
+        { name: "1000", size: 1 },
+        { name: "1100", size: 1 }
       ]
     },
     {
-      name: "BSA",
+      name: "Business Stage",
       children: [
-        { name: "B1", size: 1 },
-        { name: "B2", size: 1 }
+        { name: "Prestart", size: 1 },
+        { name: "Startup", size: 1 },
+        { name: "Lifestyle", size: 1 },
+        { name: "Entrapeneural Growth", size: 1 },
+        { name: "Managed Growth", size: 1 },
+        { name: "Beginning to Export", size: 1 },
+        { name: "Exporter", size: 1 },
+        { name: "New Products or Services", size: 1 }
       ]
     },
     {
-      name: "DDIT",
+      name: "Business Stage",children: [
+        { name: "xxx", size: 1 },
+        { name: "xxx", size: 1 },
+        { name: "xxx", size: 1 },
+        { name: "xxx", size: 1 },
+        { name: "xxx", size: 1 },
+        { name: "xxx", size: 1 },
+        { name: "xxx", size: 1 }     
+      ]
+    },
+    {
+      name: "Issue",children: [
+        { name: "Maintain Jobs", size: 1 },
+        { name: "Create Jobs", size: 1 },
+        { name: "Reduce Carbon", size: 1 },
+        { name: "New Sectors", size: 1 },
+        { name: "Export", size: 1 },
+        { name: "Improve productivity", size: 1 },
+        { name: "New services/products", size: 1 }     
+      ]
+    },
+    {
+      name: "People",  children: [
+        { name: "A11Y", children: [
+            { name: "Visual", size: 1 },
+            { name: "Cognitive", size: 1 },
+            { name: "Visual", size: 1 }
+        ]
+        },
+        { name: "Ethnicity", children: [
+            { name: "Language", children: [
+                { name: "Non English", size: 1 },
+                { name: "Not First Language", size: 1 },
+                { name: "English", size: 1 }
+        ]},
+            { name: "Culture", size: 1 }
+        ]},
+        { name: "Experience", size: 1 },
+        { name: "Under Represented", size: 1 }
+      ]
+    },
+    {
+      name: "Size",
       children: [
         {
-          name: "Service Design",
+          name: "SME",
           children: [
-            { name: "Research Team", size: 1 },
-            { name: "Service Design Team", size: 1 },
-            { name: "UX Team", size: 1 }
+            { name: "Domestic", size: 1 },
+            { name: "Early Exporter", children: [
+                { name: "EU", size: 1 },
+                { name: "North America", size: 1 },
+                { name: "South America", size: 1 },
+                { name: "Africa", size: 1 },
+                { name: "Asia", size: 1 },
+                { name: "Australasia", size: 1 },
+                { name: "World", size: 1 }
+        ] },
+            { name: "Exporter", children: [
+                { name: "EU", size: 1 },
+                { name: "North America", size: 1 },
+                { name: "South America", size: 1 },
+                { name: "Africa", size: 1 },
+                { name: "Asia", size: 1 },
+                { name: "Australasia", size: 1 },
+                { name: "World", size: 1 }
+        ]}
           ]
         },
-        { name: "Development", size: 1 },
         {
-          name: "C3", children: [
-            { name: "CC1", size: 1 },
-            { name: "CC2", size: 1 }
-          ]
-        },
-        { name: "C4", size: 1 }
-      ]
-    },
-    {
-      name: "Growth",
-      children: [
-        { name: "D1", size: 1 },
-        { name: "D2", size: 1 },
-        { name: "D3", size: 1 }
-      ]
-    },
-    {
-      name: "Support",
-      children: [
-        {
-          name: "E1",
+          name: "Pre Start",
           children: [
-            { name: "EE1", size: 1 },
-            { name: "EE2", size: 1 },
-            { name: "EE3", size: 1 }
+            { name: "Academic Spinout", size: 1 },
+            { name: "R & D", size: 1 },
+            { name: "Other", size: 1 }
           ]
         },
         {
-          name: "E2",
+          name: "Startup",
+          size: 1
+        },
+        {
+          name: "Large",
           size: 1
         }
       ]
     }]};
 
 var width = 1200,
-    height = 700,
+    height = 1000,
     radius = Math.min(width, height) / 2;
 
 var x = d3.scale.linear()
