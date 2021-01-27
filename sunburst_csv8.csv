@@ -1,7 +1,10 @@
 ids,labels,parents
 id-people,people,
 people-experience,Experience,id-people
-Enzymatic-Flowery,Flowery,
+people-A11y,A11y,id-people
+people-Ethnicity,Ethnicity,id-people
+people-Under,Under Represented,id-people
+,Enzymatic-Flowery,Flowery,
 Enzymatic-Fruity,Fruity,
 Enzymatic-Herby,Herby,
 Sugar Browning-Nutty,Nutty,
