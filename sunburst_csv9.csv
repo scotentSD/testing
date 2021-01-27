@@ -3,6 +3,13 @@ Issue,	Issue,
 People,	People,
 Sector,	Sector,
 Size,Size,
+Size-SME,SME,Size
+SME-Early,Early Exporter,Size-SME
+Early-EU,EU,SME-Early
+Early-Americas,Americas,,SME-Early
+Early-Africa,Africa,,SME-Early
+Early-Asia,Asia,,SME-Early
+Early-Australasia,Australasia,,SME-Early
 people-experience,Experience,People
 people-A11y,A11y,id-people
 people-Ethnicity,Ethnicity,People
