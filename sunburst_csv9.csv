@@ -1,7 +1,10 @@
 ids,labels,parents
-id-people,people,
-people-experience,Experience,id-people
+Issue,	Issue,
+People,	People,
+Sector,	Sector,
+Size,Size,
+people-experience,Experience,People
 people-A11y,A11y,id-people
-people-Ethnicity,Ethnicity,id-people
-people-Under,Under Represented,id-people
-Enzymatic-Fruity,Fruity,
+people-Ethnicity,Ethnicity,People
+people-Under,Under Represented,People
+Sector-Hospitality,Hospitality,Sector
