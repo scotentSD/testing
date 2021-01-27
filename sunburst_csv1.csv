@@ -7,10 +7,10 @@ id-Size,Size,
 id-Size-SME,SME,id-Size
 id-SME-Early,Early Exporter,id-Size-SME
 id-Early-EU,EU,id-SME-Early
-id-Early-Americas,Americas,,id-SME-Early
-id-Early-Africa,Africa,,id-SME-Early
+id-Early-Americas,Americas,id-SME-Early
+id-Early-Africa,Africa,id-SME-Early
 id-Early-Asia,Asia,id-SME-Early
-id-Early-Australasia,Australasia,,id-SME-Early
+id-Early-Australasia,Australasia,id-SME-Early
 id-people-experience,Experience,id-People
 id-people-A11y,A11y,id-people
 id-people-Ethnicity,Ethnicity,id-People
