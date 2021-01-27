@@ -1,34 +1,34 @@
-ds,﻿labels,parents
-Hospitality,Sector
-222,Sector
-333,Sector
-444,Sector
-555,Sector
-666,Sector
-777,Sector
-888,Sector
-999,Sector
-1000,Sector
-1100,Sector
-Pre-Start,Size
-Startup,Size
-SME,Size
-Maintain Jobs,Issue
-Create Jobs,Issue
-Reduce Carbon,Issue
-New Sectors,Issue
-Export ,Issue
-Improve productivity,Issue
-New services/products,Issue
-A11Y,People
-Ethnicity,People
-Experience,People
-Under Represented,People
-Prestart,Business Stage
-Startup,Business Stage
-Lifestyle,Business Stage
-Entrapeneural Growth,Business Stage
-Managed Growth,Business Stage
-Beginning to Export,Business Stage
-Exporter,Business Stage
-Adding Products / Services,Business Stage
+ds,﻿labels,parents,
+Hospitality,Sector,
+222,Sector,
+333,Sector,
+444,Sector,
+555,Sector,
+666,Sector,
+777,Sector,
+888,Sector,
+999,Sector,
+1000,Sector,
+1100,Sector,
+Pre-Start,Size,
+Startup,Size,
+SME,Size,
+Maintain Jobs,Issue,
+Create Jobs,Issue,
+Reduce Carbon,Issue,
+New Sectors,Issue,
+Export ,Issue,
+Improve productivity,Issue,
+New services/products,Issue,
+A11Y,People,
+Ethnicity,People,
+Experience,People,
+Under Represented,People,
+Prestart,Business Stage,
+Startup,Business Stage,
+Lifestyle,Business Stage,
+Entrapeneural Growth,Business Stage,
+Managed Growth,Business Stage,
+Beginning to Export,Business Stage,
+Exporter,Business Stage,
+Adding Products or Services,Business Stage,
