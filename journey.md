@@ -94,8 +94,36 @@ graph LR
 </div>
 
 
-<h2></h2>
+<h2>ERD</h2>
 ```
+<div class="mermaid">
+classDiagram
+    FBS_Listing <|-- Body
+    FBS_Listing <|-- Fund
+    FBS_Listing <|-- Segment
+    FBS_Listing : +String Funding_Body
+    FBS_Listing : +String Fund_Name
+    FBS_Listing : +String Segment
+    FBS_Listing: +isOpen()
+    class Body{
+      +String Funding_Body
+      +String Email
+      +String Phone
+      +emailMe()
+      +phoneMe()
+    }
+    class Fund{
+      +String Fund_Name
+      -int LowerLimit
+      -int UpperLimit
+      -isOpen()
+    }
+    class Segment{
+      +String Segment
+      -int Rank
+      -isPriority()
+    }
+</div>
 ```
 
 <div class="mermaid">
