@@ -1,7 +1,6 @@
 <h2>Customer Journey</h2>
 
-
-<div class="mermaid" style:height="200">
+<div class="mermaid" height="200">
 journey
     title My working day
     section Go to work
