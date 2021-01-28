@@ -1,3 +1,9 @@
+```mermaid
+graph LR
+person --> xxx
+person --> yyy
+```
+
 
 ```mermaid
 journey
