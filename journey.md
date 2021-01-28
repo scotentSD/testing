@@ -1,5 +1,5 @@
 <div class="mermaid">
-graph LR
+graph TD
 person --> xxx
 person --> yyy
 person --> zzz
@@ -31,7 +31,7 @@ pie title Exports
 </div>
 
 <div class="mermaid">
-graph LR
+graph TD
     A[Search] -->|Google Financial Support| B(Google Results)
     B --> C{Choose}
     C -->|UK| D[GovUK]
