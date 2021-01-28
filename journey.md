@@ -24,23 +24,18 @@ journey
 </div>
 
 <div class="mermaid">
-gitGraph:
-options
-{
-    "nodeSpacing": 150,
-    "nodeRadius": 10
-}
-end
-commit
-branch newbranch
-checkout newbranch
-commit
-commit
-commit
-checkout master
-commit
-commit
-commit
-commit
-merge newbranch
+pie title Exports
+    "Food & Drink" : 386
+    "Tech" : 85
+    "Life Sciences" : 15
 </div>
+
+<div class="mermaid">
+
+</div>
+
+<div class="mermaid">
+
+</div>
+
+
