@@ -1,6 +1,6 @@
 <h2>Box's and Arrows</h2>
 
-```
+```javascript
 <div class="mermaid">
 graph TD
 person --> xxx
@@ -18,7 +18,8 @@ person --> zzz
 
 
 <h2>Customer Journey</h2>
-```
+
+```javascript
 <div class="mermaid">
 journey
     title Get Covid funding support
