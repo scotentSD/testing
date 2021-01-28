@@ -12,6 +12,7 @@ journey
       Sit down: 3: Me
 </div>
 
+
 ```javascript
 <div class="mermaid">
 journey
