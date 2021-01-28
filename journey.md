@@ -8,7 +8,6 @@ Add these two lines of Javscript to the '''<body>''' of your web page
 Doing so will command the mermaid parser to look for the ```<div>``` tags with ```class="mermaid"``` in your HTML Document. <br>
 From these tags mermaid will try to read the diagram/chart definitons and render them as svg charts.
 
-
 <h2>Box's and Arrows</h2>
 
 ```javascript
