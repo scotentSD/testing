@@ -6,13 +6,12 @@ Creative Commons may be contacted at creativecommons.org
 
 ```mermaid
 journey
-    title Test Customer Journey
-    section First Section
-        aaa: 5 : Me
-        bbb: 3 : Me
-        ccc: 1 : Me, Cat
-    section Second Section
-        aaa: 5 : Me
-        bbb: 3 : Me, Cat
-        ccc: 1 : Me, Cat
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me
 ```
