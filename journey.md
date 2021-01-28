@@ -7,7 +7,6 @@ person --> zzz
 </div>
 ```
 
-
 ```mermaid
 journey
     title My working day
