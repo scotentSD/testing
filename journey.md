@@ -7,7 +7,7 @@ person --> zzz
 
 
 <div class="mermaid">
-```mermaid
+
 journey
     title My working day
     section Go to work
@@ -17,5 +17,5 @@ journey
     section Go home
       Go downstairs: 3: Me
       Sit down: 5: Me
-```
+
 </div>
