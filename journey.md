@@ -37,8 +37,6 @@ checkout newbranch
 commit
 commit
 commit
-commit
-commit
 checkout master
 commit
 commit
