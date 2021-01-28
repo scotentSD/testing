@@ -34,10 +34,10 @@ pie title Exports
 graph LR
     A[Search] -->|Google Financial Support| B(Google Results)
     B --> C{Choose}
-    C -->|UK| D[Gov.UK]
+    C -->|UK| D[GovUK]
     C -->|UK| D[HMRC]
     C -->|Scot| E[FBS]
-    C -->|Scot| F[Gov.Scot]
+    C -->|Scot| F[GovScot]
             
 </div>
 
