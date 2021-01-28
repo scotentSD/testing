@@ -117,7 +117,6 @@ graph LR
     C -->|Scot| G[GovScot]
 </div>
 
-
 <h2>ERD</h2>
 ```
 <div class="mermaid">
