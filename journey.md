@@ -37,6 +37,7 @@ journey
       Submit Application: 4: Customer
 </div>
 ```
+</br>
 <div class="mermaid">
 journey
     title Get Covid funding support
@@ -66,6 +67,7 @@ journey
       Reduce number of options: 3: Customer
       Read details of shortlist: 4: Customer
 </div>
+
 
 <h2>PIE Chart</h2>
 ```
