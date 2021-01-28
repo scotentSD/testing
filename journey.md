@@ -73,6 +73,7 @@ classDiagram
     class Segment{
       +String Segment
       -int Rank
+      -isPriority()
     }
 </div>
 
