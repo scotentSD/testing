@@ -32,11 +32,11 @@ pie title Exports
 <div class="mermaid">
 graph TD
     A[Search] -->|Google Financial Support| B(Google Results)
-    B --> C{Choose}
-    C -->|UK| D[GovUK]
-    C -->|UK| D[HMRC]
-    C -->|Scot| E[FBS]
-    C -->|Scot| F[GovScot]
+    B --> C{Choose }
+    C -->|UK| D[GovUK ]
+    C -->|UK| D[HMRC ]
+    C -->|Scot| E[FBS ]
+    C -->|Scot| F[GovScot ]
             
 </div>
 
