@@ -31,11 +31,42 @@ pie title Exports
 </div>
 
 <div class="mermaid">
-
+graph LR
+    A[Search] -->|Google Financial Support| B(Google Results)
+    B --> C{Choose}
+    C -->|UK| D[Gov.UK]
+    C -->|UK| D[HMRC]
+    C -->|Scot| E[FBS]
+    C -->|Scot| F[Gov.Scot]
+            
 </div>
 
 <div class="mermaid">
-
+classDiagram
+    FBS_Listing <|-- Body
+    FBS_Listing <|-- Fund
+    FBS_Listing <|-- Segment
+    FBS_Listing : +String Funding_Body
+    FBS_Listing : +String Fund_Name
+    FBS_Listing : +String Segment
+    FBS_Listing: +isOpen()
+    class Body{
+      +String Funding_Body
+      +String Email
+      +String Phone
+      +emailMe()
+      +phoneMe()
+    }
+    class Fund{
+      +String Fund_Name
+      -int LowerLimit
+      -int UpperLimit
+      -isOpen()
+    }
+    class Segment{
+      +String Segment
+      -int Rank
+    }
 </div>
 
 
