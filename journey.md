@@ -70,8 +70,17 @@ pie title Exports
 </div>
 
 
-<h2></h2>
+<h2>Flow Chart</h2>
 ```
+<div class="mermaid">
+graph LR
+    A[Search] -->|Google Financial Support| B(Google Results)
+    B --> C{Choose}
+    C -->|UK| D[GovUK]
+    C -->|UK| D[HMRC]
+    C -->|Scot| E[FBS]
+    C -->|Scot| F[GovScot]
+</div>
 ```
 
 <div class="mermaid">
@@ -82,7 +91,6 @@ graph LR
     C -->|UK| D[HMRC]
     C -->|Scot| E[FBS]
     C -->|Scot| F[GovScot]
-            
 </div>
 
 
