@@ -36,8 +36,6 @@ journey
       Submit Application: 4: Customer
 </div>
 ```
-
-
 <div class="mermaid">
 journey
     title Get Covid funding support
@@ -55,11 +53,15 @@ journey
       Submit Application: 4: Customer
 </div>
 
-<h2></h2>
+<h2>PIE Chart</h2>
 ```
+<div class="mermaid">
+pie title Exports
+    "Food & Drink" : 386
+    "Tech" : 85
+    "Life Sciences" : 15
+</div>
 ```
-
-
 <div class="mermaid">
 pie title Exports
     "Food & Drink" : 386
