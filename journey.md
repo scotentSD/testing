@@ -1,11 +1,9 @@
-
 <div class="mermaid">
 graph LR
 person --> xxx
 person --> yyy
 person --> zzz
 </div>
-
 
 ```mermaid
 journey
