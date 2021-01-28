@@ -1,3 +1,13 @@
+<h2>Enabling Mermaid on a page</h2>
+Add these two lines of Javscript to the '''<body>''' of your web page
+
+```javascript
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+```
+Doing so will command the mermaid parser to look for the '''<div>''' tags with '''class="mermaid"''' in your HTML Document. From these tags mermaid will try to read the diagram/chart definitons and render them as svg charts.
+
+
 <h2>Box's and Arrows</h2>
 
 ```javascript
@@ -44,8 +54,7 @@ journey
     section Find Funding
       Google it: 4: Customer
       Talk to peers: 5: Customer
-      Visit FBS: 4: Customer
-      Do work: 1: Customer, Stakeholder
+      Visit FBS: 4: Customer, Stakeholder
     section Choose Support
       Reduce number of options: 3: Customer
       Read details of shortlist: 4: Customer
@@ -61,8 +70,7 @@ journey
     section Find Funding
       Google it: 4: Customer
       Talk to peers: 5: Customer
-      Visit FBS: 4: Customer
-      Do work: 1: Customer, Stakeholder
+      Visit FBS: 4: Customer, Stakeholder
     section Choose Support
       Reduce number of options: 3: Customer
       Read details of shortlist: 4: Customer
