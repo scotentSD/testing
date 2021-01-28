@@ -1,9 +1,4 @@
-<div class="mermaid">
-graph TD
-person --> xxx
-person --> yyy
-person --> zzz
-</div>
+<h2>Box's and Arrows</h2>
 
 ```
 <div class="mermaid">
@@ -12,6 +7,17 @@ person --> xxx
 person --> yyy
 person --> zzz
 </div>
+```
+
+<div class="mermaid">
+graph TD
+person --> xxx
+person --> yyy
+person --> zzz
+</div>
+
+
+<h2>Customer Journey</h2>
 ```
 <div class="mermaid">
 journey
@@ -29,6 +35,30 @@ journey
       Create Account: 2: Customer
       Submit Application: 4: Customer
 </div>
+```
+
+
+<div class="mermaid">
+journey
+    title Get Covid funding support
+    section Find Funding
+      Google it: 4: Customer
+      Talk to peers: 5: Customer
+      Visit FBS: 4: Customer
+      Do work: 1: Customer, Stakeholder
+    section Choose Support
+      Reduce number of options: 3: Customer
+      Read details of shortlist: 4: Customer
+    section Apply for Support
+      Start Application: 5: Customer
+      Create Account: 2: Customer
+      Submit Application: 4: Customer
+</div>
+
+<h2></h2>
+```
+```
+
 
 <div class="mermaid">
 pie title Exports
@@ -36,6 +66,11 @@ pie title Exports
     "Tech" : 85
     "Life Sciences" : 15
 </div>
+
+
+<h2></h2>
+```
+```
 
 <div class="mermaid">
 graph LR
@@ -47,6 +82,11 @@ graph LR
     C -->|Scot| F[GovScot]
             
 </div>
+
+
+<h2></h2>
+```
+```
 
 <div class="mermaid">
 classDiagram
@@ -76,5 +116,3 @@ classDiagram
       -isPriority()
     }
 </div>
-
-
