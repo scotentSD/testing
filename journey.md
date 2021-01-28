@@ -13,6 +13,6 @@ journey
         ccc: 1 : Me, Cat
     section Second Section
         aaa: 5 : Me
-        bbb: 3 : Me
+        bbb: 3 : Me, Cat
         ccc: 1 : Me, Cat
 ```
