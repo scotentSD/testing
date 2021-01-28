@@ -1,8 +1,3 @@
-# creative commons
-
-
-Creative Commons may be contacted at creativecommons.org
-```
 
 ```mermaid
 journey
