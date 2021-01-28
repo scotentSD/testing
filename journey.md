@@ -5,6 +5,7 @@ person --> yyy
 person --> zzz
 </div>
 
+<div class="mermaid">
 ```mermaid
 journey
     title My working day
@@ -16,3 +17,4 @@ journey
       Go downstairs: 3: Me
       Sit down: 5: Me
 ```
+</div>
