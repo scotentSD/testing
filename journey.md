@@ -1,4 +1,4 @@
-```mermaid
+```mermaid!
 graph LR
 person --> xxx
 person --> yyy
@@ -6,7 +6,7 @@ person --> zzz
 ```
 
 
-```mermaid
+```mermaid!
 journey
     title My working day
     section Go to work
