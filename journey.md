@@ -12,7 +12,7 @@ journey
       Google it: 4: Customer
       Talk to peers: 5: Customer
       Visit FBS: 4: Customer
-      Do work: 1: Me, Customer, Stakeholder
+      Do work: 1: Customer, Stakeholder
     section Choose Support
       Reduce number of options: 3: Customer
       Read details of shortlist: 4: Customer
