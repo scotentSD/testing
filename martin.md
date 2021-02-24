@@ -17,5 +17,5 @@ I am a researcher at **Scottish Enterprise**
 [Test PDF](https://scotentsd.github.io/testing/files/test.pdf)
 
 ## Images
-![Hector on a SUP](https://scotentsd.github.io/testing/files/hector.jpg)
+![Hector on a SUP](https://scotentsd.github.io/testing/files/both.png)
 
