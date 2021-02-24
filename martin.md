@@ -13,3 +13,9 @@ I am a researcher at **Scottish Enterprise**
 ## Websites
 - [BBC News](https://news.bbc.co.uk)
 
+## Local File
+[Test PDF](https://scotentsd.github.io/testing/files/test.pdf)
+
+## Images
+[Hector on a SUP](https://scotentsd.github.io/testing/files/hector.jpg)
+
