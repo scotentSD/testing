@@ -1,6 +1,6 @@
 #Fair Work
 
-## 5 temes
+## 5 Themes
     - appropriate channels for effective voice, such as trade union recognition;
     - investment in workforce development;
     - no inappropriate use of zero hours contracts;
