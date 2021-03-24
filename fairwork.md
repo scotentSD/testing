@@ -1,4 +1,4 @@
-#Fair Work
+# Fair Work
 
 ## 5 Themes
 > 1. Payment of the real Living Wage.
