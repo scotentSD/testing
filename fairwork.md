@@ -1,11 +1,11 @@
 #Fair Work
 
 ## 5 Themes
-> - payment of the real Living Wage.
-> - investment in workforce development;
-> - no inappropriate use of zero hours contracts;
-> - appropriate channels for effective voice, such as trade union recognition;
-> - action to tackle the gender pay gap and create a more diverse and inclusive workplace; and
+> 1. payment of the real Living Wage.
+> 2. investment in workforce development;
+> 3. no inappropriate use of zero hours contracts;
+> 4. appropriate channels for effective voice, such as trade union recognition;
+> 5. action to tackle the gender pay gap and create a more diverse and inclusive workplace; and
 
 
 ## Convention
