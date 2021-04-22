@@ -1,6 +1,6 @@
 # Fair Work
 
-## Job Quality Suggestions
+## Examples
 - Introduce mechanisms to aid effective dialogue and gather feedback from staff (i.e. 1:1s; Staff Surveys)
 - Become recognised by a Trade Union for the purpose of collective bargaining
 - Introduce approaches to manage conflict
