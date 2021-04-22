@@ -14,3 +14,6 @@
 - Review pay structures and develop an incremental plan for paying all staff at least the real Living Wage
 - Become part of a local partnership working towards Living Wage Place recognition.
 - Other?
+
+
+
