@@ -13,7 +13,7 @@
 - Conduct a review of pay and reward to identify and address any possible discrepancies/gaps, particularly for under-represented groups (i.e. by gender) 
 - Review pay structures and develop an incremental plan for paying all staff at least the real Living Wage
 - Become part of a local partnership working towards Living Wage Place recognition.
-- Other?
+
 
 
 
