@@ -6,7 +6,7 @@ prose:
   siteurl: 'http://scotentSD.github.io/testing/'
   relativeLinks: 'http://scotentSD.github.io/testing/links.jsonp'
   media: 'files'
-  ignore: [links.jsonp,  _config.yml,  media,  assets,  _sass,  _layouts, _includes, _flist, _drafts, images, mktest, data.json, data2.json, data2.jsonp, timeline.css, links_copy.jsonp, testrounds, js, timelinelight.md, timelinelight2.md, timelinelight3.md,  timeline_summary2.md, timeline_summary.md, timeline.md]
+  ignore: [links.jsonp,  _config.yml,  media,  assets,  _sass,  _layouts, _includes, _flist, _drafts, images,css, fonts, mktest, data.json, data2.json, data2.jsonp, timeline.css, links_copy.jsonp, testrounds, js, timelinelight.md, timelinelight2.md, timelinelight3.md,  timeline_summary2.md, timeline_summary.md, timeline.md]
   metadata:
    _posts:
     - name: "layout"
