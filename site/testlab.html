@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="img/favicon.ico" rel="shortcut icon"/>
+<title>Test Lab - SE Plans</title>
+<link href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet"/>
+<link href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css" rel="stylesheet"/>
+<link href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css" rel="stylesheet"/>
+<link href="//rsms.me/inter/inter.css" rel="stylesheet" type="text/css"/>
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&amp;subset=latin-ext,latin" rel="stylesheet" type="text/css"/>
+<link href="css/bootstrap-custom.min.css" rel="stylesheet"/>
+<link href="css/base.min.css" rel="stylesheet"/>
+<link href="css/cinder.min.css" rel="stylesheet"/>
+<link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css" rel="stylesheet"/>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
+<!-- Collapsed navigation -->
+<div class="navbar-header">
+<!-- Main title -->
+<a class="navbar-brand" href="index.html">SE Plans</a>
+</div>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a data-target="#mkdocs_search_modal" data-toggle="modal" href="#">
+<i class="fas fa-search"></i> Search
+                        </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+<ul class="nav bs-sidenav">
+<li class="first-level active"><a href="#test-lab">Test Lab</a></li>
+<li class="second-level"><a href="#git-graphs">Git Graphs</a></li>
+<li class="second-level"><a href="#customer-journey">Customer Journey</a></li>
+<li class="second-level"><a href="#er-diagram">ER Diagram</a></li>
+<li class="second-level"><a href="#shot-at-a-gantt-chart">Shot at a Gantt Chart</a></li>
+<li class="second-level"><a href="#this-uses-mermaid2-plugin-on-mkdocs-for-graphing-">This uses mermaid2 plugin on mkdocs for graphing :-)</a></li>
+</ul>
+</div></div>
+<div class="col-md-9" role="main">
+<h1 id="test-lab">Test Lab</h1>
+<hr/>
+<h2 id="git-graphs">Git Graphs</h2>
+<div class="mermaid">gitGraph
+    commit id: "Alpha"
+    commit  id: "Beta"
+    branch develop
+    checkout develop
+    commit  id: "D1"
+    checkout main
+    commit id: "Beta2"
+    checkout develop
+    commit id: "D2"
+    commit id: "D3"
+    checkout main
+    merge develop
+    commit  id: "Charlie"
+    commit  id: "Delta"
+</div>
+<h2 id="customer-journey">Customer Journey</h2>
+<div class="mermaid">journey
+  title My working day
+  section Go to work 
+    Make tea: 5: Phase1 
+    444444: 4: Phase1 
+    Go upstairs: 3: Phase1 
+    222222: 2: Phase1  
+    Do work: 1: Phase1, Phase2  
+  section Go home  
+    Go downstairs: 5: Phase2  
+    Sit down: 5: Phase2
+</div>
+<h2 id="er-diagram">ER Diagram</h2>
+<div class="mermaid">erDiagram  
+    CUSTOMER ||--o{ ORDER : places  
+    ORDER ||--|{ LINE-ITEM : contains  
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+</div>
+<hr/>
+<div class="mermaid">graph TD
+    A[NSET] --&gt;|NSET VISION| B(NSET Vision and Ambitions)
+    B --&gt;C[Entrapreneurial &lt;br&gt;People &amp; Culture]
+    B --&gt; D[New Market &lt;br&gt;Opportunities]
+    B --&gt; E[Productive &lt;br&gt;Businesses &lt;br&gt;&amp; Regions]
+    B --&gt; F[Skilled&lt;br&gt; Workforce]
+    B --&gt; G[A Fairer &lt;br&gt;More &lt;br&gt;Equal Society]
+    D --&gt; H[Innovation:&lt;br&gt;aligned with &lt;br&gt;Future Markets&lt;br&gt;delivery plan]
+    D --&gt; I[International: &lt;br&gt;Help Deliver &lt;br&gt;International &lt;br&gt;Strategies]
+    E --&gt; J[Support &lt;br&gt;national&lt;br&gt; and&lt;br&gt; Regional]
+</div>
+<h2 id="shot-at-a-gantt-chart">Shot at a Gantt Chart</h2>
+<div class="mermaid">gantt
+ title Example Gantt diagram
+    dateFormat  YYYY-MM-DD
+    section Team 1
+    Research &amp; requirements :done, a1, 2020-03-08, 2020-04-10
+    Review &amp; documentation : after a1, 20d
+    section Team 2
+    Implementation      :crit, active, 2020-03-25  , 20d
+    Testing      :crit, 20d
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a test of Admonitions</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a test of Admonitions</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This is a test of Admonitions</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>This is a test of Admonitions</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This is a test of Admonitions</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is a test of Admonitions</p>
+</div>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>This is a test of Admonitions</p>
+</div>
+<hr/>
+<h2 id="this-uses-mermaid2-plugin-on-mkdocs-for-graphing-">This uses mermaid2 plugin on mkdocs for graphing :-)</h2>
+<div class="mermaid">graph TB
+    c1--&gt;a2
+    a1--&gt;b1
+    subgraph one
+    a1--&gt;a2
+    end
+    subgraph two
+    b1--&gt;b2
+    end
+    subgraph three
+    c1--&gt;c2
+    end
+</div>
+<div class="mermaid">graph TB
+    c1--&gt;a2
+    subgraph one
+    a1--&gt;a2
+    end
+    subgraph two
+    b1--&gt;b2
+    end
+    subgraph three
+    c1--&gt;c2
+    end
+</div>
+<div class="mermaid">graph TD
+    A[Hard] --&gt;|Text| B(Round)
+    B --&gt; C{Decision}
+    C --&gt;|One| D[Result 1]
+    C --&gt;|Two| E[Result 2]
+</div>
+<hr/>
+<p><img alt="❤️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2764.png" title=":heart:"/></p>
+<p><img alt="😄" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f604.png" title=":smile:"/></p>
+<p><img alt="👍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f44d.png" title=":thumbsup:"/></p>
+<hr/></div>
+</div>
+<footer class="col-md-12 text-center">
+<hr/>
+<p>
+<small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+</p>
+</footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap-3.0.3.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>var base_url = "."</script>
+<script src="js/base.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script src="search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+<span class="sr-only">Close</span>
+</button>
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+</div>
+<div class="modal-body">
+<p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="text"/>
+</div>
+</form>
+<div id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+<script>mermaid.initialize({});</script></body>
+</html>
