@@ -1,5 +1,5 @@
 # Test Documents
 
-- [Checklist](chechlist.docx)
+- [Checklist](checklist.docx)
 - [Cashflow](cashflow.xlsm)
 
