@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scottish Enterprise</title>
+  <link rel="stylesheet" href="styles-pop.css"
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <h1>Scottish Enterprise</h1>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="site-main" role="main">
+    <div class="container">
+      <section aria-labelledby="services-title">
+        <h2 id="services-title" class="visually-hidden">Economic Development & Business Advice</h2>
+
+        <div class="card-grid">
+          <article class="card">
+            <h3>Innovation &amp; R&amp;D</h3>
+            <p>Support for product development, prototyping, and collaborative research.</p>
+            <a>Learn more</a>
+          </article>
+
+          <article class="card">
+            <h3>Export &amp; International Trade</h3>
+            <p>Guidance to enter new markets, compliance, and trade missions.</p>
+            <a>Learn more</a>
+          </article>
+
+          <article class="card">
+            <h3>Investment &amp; Access to Finance</h3>
+            <p>Routes to grants, loans, and investor readiness support.</p>
+            <a>Learn more</a>
+          </article>
+
+          <article class="card">
+            <h3>Sustainable Growth &amp; Net Zero</h3>
+            <p>Decarbonisation advice, circular economy, and energy efficiency.</p>
+            <a>Learn more</a>
+          </article>
+
+          <article class="card">
+            <h3>Skills &amp; Workforce Development</h3>
+            <p>Upskilling, apprenticeships, and leadership programmes.</p>
+            <a>Learn more</a>
+          </article>
+
+        <article class="card">
+            <h3>Hovercraft &amp; Eels</h3>
+            <p>Hovercraft may become full of eels for a variety of reasons.</p>
+            <a>Learn more</a>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <h3>We welcome your feedback</h3>
+      <button id="feedback-btn" class="feedback-trigger">
+        Feedback
+      </button>
+
+    <div id="feedback-popup" class="popup-container">
+      <div class="popup-header">
+          <span>We value your feedback</span>
+          <button id="close-btn" class="close-btn">&times;</button>
+      </div>
+      <iframe 
+        width="100%" 
+        height="100%" 
+        style="border:none;"
+        src="https://forms.office.com/e/V7XMN40H8H?embed=true">
+      </iframe>
+    </div>      
+      
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    //This toggles the .show class to activate the CSS animation.
+    const feedbackBtn = document.getElementById('feedback-btn');
+    const popup = document.getElementById('feedback-popup');
+    const closeBtn = document.getElementById('close-btn');
+
+    // Toggle the popup open/close
+        feedbackBtn.addEventListener('click', function() {
+            popup.classList.toggle('show');
+        });
+
+    // Close the popup explicitly
+        closeBtn.addEventListener('click', function() {
+            popup.classList.remove('show');
+        });
+    });
+</script>
+
+    </div>
+  </footer>
+</body>
