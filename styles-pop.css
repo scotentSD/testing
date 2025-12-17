@@ -122,42 +122,7 @@ body {
 
 
 
-/* Common properties for both buttons */
-.btn-green,
-.btn-red {
-  font-size: 1.1rem;   /* Font size */
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px 10px;        /* Space inside the button TOP / LR */
-  border-radius: 6px;  /* Rounded corners */
-  cursor: pointer;     /* Pointer on hover */
-}
 
-/* Style 1: Green with Black Text */
-.btn-green {
-  background-color: green;
-   border: 2px solid grey; /* Blue border */
-  color: black;
-}
-
-/* Style 2: Red with Black Text */
-.btn-red {
-  background-color: red;
-   border: 2px solid grey; /* Blue border */
-  color: black;
-}
-
-.feedback-link {
-  color: inherit;         /* stay readable on grey */
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-}
-
-.feedback-link:hover,
-.feedback-link:focus {
-  text-decoration: none;
-  border-bottom-color: #1a1a1a;
-}
 
 
   /* POPUP */
@@ -233,3 +198,4 @@ body {
     cursor: pointer;
     color: #333;
 }
+
