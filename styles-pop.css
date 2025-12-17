@@ -181,7 +181,7 @@ body {
 
 /* 4. Header and Close Button Styling */
 .popup-header {
-    background-color: #0078d4;
+    background-color: #03787c;
     color: white;
     padding: 10px 15px;
     display: flex;
@@ -203,6 +203,7 @@ background: none;
 .close-btn:hover {
     color: #c7e0f4; /* Light blue hover effect */
 }
+
 
 
 
