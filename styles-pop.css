@@ -122,7 +122,42 @@ body {
 
 
 
+/* Common properties for both buttons */
+.btn-green,
+.btn-red {
+  font-size: 1.1rem;   /* Font size */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px 10px;        /* Space inside the button TOP / LR */
+  border-radius: 6px;  /* Rounded corners */
+  cursor: pointer;     /* Pointer on hover */
+}
 
+/* Style 1: Green with Black Text */
+.btn-green {
+  background-color: green;
+   border: 2px solid grey; /* Blue border */
+  color: black;
+}
+
+/* Style 2: Red with Black Text */
+.btn-red {
+  background-color: red;
+   border: 2px solid grey; /* Blue border */
+  color: black;
+}
+
+.feedback-link {
+  color: inherit;         /* stay readable on grey */
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.feedback-link:hover,
+.feedback-link:focus {
+  text-decoration: none;
+  border-bottom-color: #1a1a1a;
+}
 
 
   /* POPUP */
@@ -134,15 +169,13 @@ body {
               /* POPUP */
               
   /* 1. The Trigger Button Style */
-/* 1. The Trigger Button */
 .feedback-trigger {
-    background-color: #03787c; /* Teal Brand Color */
-    color: white; 
-    /* Keep your existing positioning/padding... */
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 20px;
     padding: 12px 24px;
+    background-color: #0078d4; /* MS Blue */
+    color: white;
     border: none;
     border-radius: 30px;
     font-size: 16px;
@@ -153,45 +186,50 @@ body {
 }
 
 .feedback-trigger:hover {
-    background-color: #025a5d; /* Slightly darker teal for hover */
+    background-color: #005a9e;
 }
 
-/* 2. The Header (Matches Trigger) */
-.popup-header {
-    background-color: #03787c; /* Teal Brand Color */
-    color: white;
+/* 2. The Popup Container */
+.popup-container {
+    position: fixed;
+    bottom: 80px; /* Sits above the button */
+    left: 20px;
+    width: 450px;
+    height: 600px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 9998;
     
-    /* Layout */
+    /* Animation Logic */
+    transform: translateY(120%); /* Push it down off screen initially */
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Slow rise */
+    visibility: hidden; /* Hide it from screen readers when closed */
+}
+
+/* 3. The Active State (Triggered via JS) */
+.popup-container.show {
+    transform: translateY(0); /* Slide up to original position */
+    visibility: visible;
+}
+
+/* 4. Header and Close Button Styling */
+.popup-header {
+    background-color: #f3f2f1;
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #e1dfdd;
     font-family: 'Segoe UI', sans-serif;
     font-size: 14px;
 }
 
-/* 3. The Bubble Close Button */
 .close-btn {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    
-    /* Semi-transparent white bubble sits nicely on the teal */
-    background-color: rgba(255, 255, 255, 0.2); 
-    color: white;
+    background: none;
     border: none;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
+    font-size: 40px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    color: #333;
 }
-
-.close-btn:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-
-
