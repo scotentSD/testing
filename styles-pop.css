@@ -200,4 +200,9 @@ background: none;
     color: white; /* Changed from #333 */
 }
 
+.close-btn:hover {
+    color: #c7e0f4; /* Light blue hover effect */
+}
+
+
 
