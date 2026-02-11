@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Support Eligibility Checker</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; max-width: 850px; margin: 40px auto; padding: 20px; color: #333; background-color: #f8f9fa; }
+        .container { background: white; padding: 35px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h1 { color: #005eb8; border-bottom: 3px solid #005eb8; padding-bottom: 10px; margin-bottom: 30px; }
+        .question-block { margin-bottom: 20px; padding: 15px; background: #fff; border: 1px solid #e1e4e8; border-radius: 8px; }
+        label { display: block; font-weight: 600; margin-bottom: 10px; }
+        select, input { padding: 10px; width: 100%; max-width: 400px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #005eb8; color: white; border: none; padding: 15px 30px; cursor: pointer; font-size: 16px; border-radius: 6px; font-weight: bold; }
+        button:hover { background: #003d76; }
+
+        /* Report Styling */
+        .report-section { margin-bottom: 20px; padding: 20px; border-radius: 8px; border-left: 8px solid; }
+        .hard-red { border-color: #d9534f; background: #fff5f5; }
+        .soft-amber { border-color: #f0ad4e; background: #fffcf5; }
+        .score-box { margin-top: 40px; padding: 25px; border-radius: 8px; text-align: center; border: 2px dashed #005eb8; }
+        .score-number { font-size: 48px; font-weight: bold; color: #005eb8; display: block; }
+        .reason-list { text-align: left; display: inline-block; margin-top: 15px; color: #555; }
+        .pass-text { color: #28a745; font-weight: bold; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="form-container">
+        <h1>Business Eligibility Assessment</h1>
+        <form id="eligibilityForm">
+            <div class="question-block"><label>1. Are you based in Scotland?</label><select id="q1"><option value="Yes">Yes</option><option value="No">No</option></select></div>
+            <div class="question-block"><label>2. Do you or anyone in your Company/Group deal with Russian Companies?</label><select id="q2"><option value="No">No</option><option value="Yes">Yes</option></select></div>
+            <div class="question-block"><label>3. Are you selling Weapons or Armaments?</label><select id="q3"><option value="No">No</option><option value="Yes">Yes</option></select></div>
+            <div class="question-block"><label>4. Are you willing to work with Scottish Enterprise?</label><select id="q4"><option value="Yes">Yes</option><option value="No">No</option></select></div>
+            <div class="question-block"><label>5. Are you trying to grow your Company or Maintain it as is?</label><select id="q5"><option value="Grow">Grow</option><option value="Maintain">Maintain</option></select></div>
+            <div class="question-block"><label>6. How many Employees do you have?</label><input type="number" id="q6" value="10"></div>
+            <div class="question-block"><label>7. Are you meeting Net Zero Targets?</label><select id="q7"><option value="Yes">Yes</option><option value="No">No</option></select></div>
+            <div class="question-block"><label>8. Are you compliant with Fair Work Practices?</label><select id="q8"><option value="Yes">Yes</option><option value="No">No</option></select></div>
+            <div class="question-block"><label>9. Are you paying all employees at least the Real Living Wage?</label><select id="q9"><option value="Yes">Yes</option><option value="No">No</option></select></div>
+            <button type="button" onclick="generateReport()">Generate Detailed Report</button>
+        </form>
+    </div>
+
+    <div id="report-container" style="display:none;">
+        <h1>Your Support Assessment Report</h1>
+        <div id="report-content"></div>
+        <div id="score-section" class="score-box"></div>
+        <br>
+        <button onclick="window.print()">Print Report</button>
+        <button onclick="location.reload()" style="background:#666; margin-left:10px;">Restart Assessment</button>
+    </div>
+</div>
+
+<script>
+function generateReport() {
+    const data = {
+        q1: document.getElementById('q1').value,
+        q2: document.getElementById('q2').value,
+        q3: document.getElementById('q3').value,
+        q4: document.getElementById('q4').value,
+        q5: document.getElementById('q5').value,
+        q6: parseInt(document.getElementById('q6').value),
+        q7: document.getElementById('q7').value,
+        q8: document.getElementById('q8').value,
+        q9: document.getElementById('q9').value
+    };
+
+    let html = "";
+    let score = 100;
+    let reasons0 = [];
+    let reasons50 = [];
+    const partners = `<ul><li>Business Gateway</li><li>HIE</li><li>SOSE</li><li>Skills Development Scotland</li></ul>`;
+
+    // Logic Sections
+    if (data.q1 === "No") {
+        reasons0.push("Not based in Scotland");
+        html += `<div class="report-section hard-red"><h3>Section 1: Based in Scotland</h3><p>We can’t support you yet: Scottish Enterprise only deals with Companies that are based in Scotland. For support you should visit our International Partner ‘Scottish Development International’.</p></div>`;
+    }
+    if (data.q2 === "Yes") {
+        reasons0.push("Russian Sanctions Policy");
+        html += `<div class="report-section hard-red"><h3>Section 2: Russian Sanctions</h3><p>We can’t support you yet: Scottish Enterprise cannot currently deal with companies that have dealings with Russian Companies. This is part of the Scottish Government Sanctions policy and may change over time.</p></div>`;
+    }
+    if (data.q3 === "Yes") {
+        reasons0.push("Military Trading Policy");
+        html += `<div class="report-section hard-red"><h3>Section 3: Military Trading</h3><p>We can’t support you yet: Scottish Enterprise cannot currently deal with companies that deal in munitions or weapons. This is part of the Scottish Government Military Trading Policy.</p></div>`;
+    }
+    if (data.q4 === "No") {
+        reasons0.push("Unwilling to work with Scottish Enterprise");
+        html += `<div class="report-section hard-red"><h3>Section 4: Scottish Enterprise</h3><p>We can’t support you yet: If you are unwilling to work with Scottish Enterprise then we cannot provide you support. We have a large number of Partners that may be able to help you:${partners}</p></div>`;
+    }
+    if (data.q5 === "Maintain") {
+        reasons0.push("Growth Ambition (Currently Maintaining)");
+        html += `<div class="report-section hard-red"><h3>Section 5: Ambition</h3><p>We are less likely to support you because: Scottish Enterprise is targeted at companies that are ambitious to grow. If you are in a Maintaining phase then we have a large number of Partners that may be able to help you:${partners}</p></div>`;
+    }
+    if (data.q6 < 10) {
+        reasons50.push("Company Size (Less than 10 employees)");
+        html += `<div class="report-section soft-amber"><h3>Section 6: Employees</h3><p>We are less likely to support you because: Scottish Enterprise typically does not deal with small companies (less than 10 Employees). This is not a hard rejection but it does mean that you may not be eligible for most of our support services.</p></div>`;
+    }
+    if (data.q7 === "No") {
+        reasons50.push("Net Zero Standards");
+        html += `<div class="report-section soft-amber"><h3>Section 7: Net Zero</h3><p>We are less likely to support you because: Scottish Enterprise is compelled to work with companies that meet Net Zero standards. To learn more use our Net Zero Accelerator Tool.</p></div>`;
+    }
+    if (data.q8 === "No") {
+        reasons50.push("Fair Work Compliance");
+        html += `<div class="report-section soft-amber"><h3>Section 8: Fair Work</h3><p>We are less likely to support you because: Scottish Enterprise is compelled to work with companies that meet Fair Work standards. To learn more about Fair Work standards and get advice on meeting them …..</p></div>`;
+    }
+    if (data.q9 === "No") {
+        reasons50.push("Real Living Wage Compliance");
+        html += `<div class="report-section soft-amber"><h3>Section 9: Real Living Wage</h3><p>We are less likely to support you because: Scottish Enterprise is compelled to work with companies that pay the Real Living Wage. To learn more about Real Living Wage standards and get advice on meeting them …</p></div>`;
+    }
+
+    // Scoring Final Logic
+    let scoreDisplay = "";
+    if (reasons0.length > 0) {
+        score = 0;
+        scoreDisplay = `<h2>Eligibility Score</h2><span class="score-number">0%</span><div class="reason-list"><strong>Primary Reasons:</strong><ul><li>${reasons0.join('</li><li>')}</li></ul></div>`;
+    } else if (reasons50.length > 0) {
+        score = 50;
+        scoreDisplay = `<h2>Eligibility Score</h2><span class="score-number">50%</span><div class="reason-list"><strong>Secondary Considerations:</strong><ul><li>${reasons50.join('</li><li>')}</li></ul></div>`;
+    } else {
+        score = 100;
+        scoreDisplay = `<h2>Eligibility Score</h2><span class="score-number">100%</span><p class="pass-text">You have passed all the pre-qualification measures.</p>`;
+    }
+
+    document.getElementById('form-container').style.display = 'none';
+    document.getElementById('report-container').style.display = 'block';
+    document.getElementById('report-content').innerHTML = html;
+    document.getElementById('score-section').innerHTML = scoreDisplay;
+}
+</script>
+</body>
+</html>
