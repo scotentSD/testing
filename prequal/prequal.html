@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scottish Enterprise Assessment Portal</title>
+    <style>
+        :root { --se-blue: #005eb8; --reject-red: #d9534f; --warn-amber: #f0ad4e; --pass-green: #28a745; --bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: var(--bg); color: #333; }
+        .wrapper { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .logo-placeholder { text-align: center; margin-bottom: 20px; font-weight: bold; font-size: 24px; color: var(--se-blue); border: 2px solid var(--se-blue); padding: 10px; display: inline-block; }
+        h1 { color: var(--se-blue); border-bottom: 2px solid var(--se-blue); padding-bottom: 10px; }
+        .step { display: none; }
+        .active { display: block; }
+        
+        /* Form Styling */
+        .q-row { margin-bottom: 15px; padding: 10px; border-bottom: 1px solid #eee; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        select, input, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px; }
+        button { background: var(--se-blue); color: white; border: none; padding: 15px 30px; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; margin-top: 20px; transition: 0.2s; }
+        button:hover { background: #003d76; }
+
+        /* Report Styling */
+        .report-sec { margin-bottom: 15px; padding: 15px; border-left: 8px solid; border-radius: 4px; }
+        .hard { border-color: var(--reject-red); background: #fff5f5; }
+        .soft { border-color: var(--warn-amber); background: #fffdf5; }
+        .score-box { text-align: center; margin-top: 30px; padding: 20px; border: 3px solid var(--se-blue); border-radius: 10px; }
+        .score-num { font-size: 60px; font-weight: bold; color: var(--se-blue); display: block; }
+
+        /* Product Styling */
+        .product-item { background: #f1f1f1; margin: 10px 0; padding: 15px; border-radius: 5px; display: flex; align-items: center; }
+        .product-item input { width: auto; margin-right: 15px; transform: scale(1.5); }
+        .portal-main { text-align: center; margin-top: 100px; }
+        .portal-title { font-size: 72px; font-weight: bold; color: var(--se-blue); }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div id="step1" class="step active">
+        <h1>Initial Eligibility Assessment</h1>
+        <div class="q-row"><label>1. Are you based in Scotland?</label><select id="q1"><option value="Yes">Yes</option><option value="No">No</option></select></div>
+        <div class="q-row"><label>2. Do you or anyone in your Company/Group deal with Russian Companies?</label><select id="q2"><option value="No">No</option><option value="Yes">Yes</option></select></div>
+        <div class="q-row"><label>3. Are you selling Weapons or Armaments?</label><select id="q3"><option value="No">No</option><option value="Yes">Yes</option></select></div>
+        <div class="q-row"><label>4. Are you willing to work with Scottish Enterprise?</label><select id="q4"><option value="Yes">Yes</option><option value="No">No</option></select></div>
+        <div class="q-row"><label>5. Are you trying to grow your Company or Maintain it as is?</label><select id="q5"><option value="Grow">Grow</option><option value="Maintain">Maintain</option></select></div>
+        <div class="q-row"><label>6. Are you working in sub-prime lending?</label><select id="q6"><option value="No">No</option><option value="Yes">Yes</option></select></div>
+        <div class="q-row"><label>7. Are you working in adult entertainment?</label><select id="q7"><option value="No">No</option><option value="Yes">Yes</option></select></div>
+        <div class="q-row"><label>8. Are you working in gambling?</label><select id="q8"><option value="No">No</option><option value="Yes">Yes</option></select></div>
+        <div class="q-row"><label>9. How many Employees do you have?</label><input type="number" id="q9" value="10"></div>
+        <div class="q-row"><label>10. Are you meeting Net Zero Targets?</label><select id="q10"><option value="Yes">Yes</option><option value="No">No</option></select></div>
+        <div class="q-row"><label>11. Are you compliant with Fair Work Practices?</label><select id="q11"><option value="Yes">Yes</option><option value="No">No</option></select></div>
+        <div class="q-row"><label>12. Are you paying all employees at least the Real Living Wage?</label><select id="q12"><option value="Yes">Yes</option><option value="No">No</option></select></div>
+        <button onclick="processAssessment()">Generate Report</button>
+    </div>
+
+    <div id="step2" class="step">
+        <h1>Assessment Report</h1>
+        <div id="report-output"></div>
+        <div id="score-output" class="score-box"></div>
+        <div id="report-nav" style="text-align:center;"></div>
+    </div>
+
+    <div id="step3" class="step">
+        <h1>Match Products & Support</h1>
+        <div id="summary-prev" style="background:#eef6ff; padding:15px; margin-bottom:20px; border-radius:5px;"></div>
+        
+        <label>Describe your company (What you do, Turnover, Markets, Products):</label>
+        <textarea id="desc-comp"></textarea>
+        
+        <label style="margin-top:20px;">What support do you need (Money, Advice, How much, Plans):</label>
+        <textarea id="desc-supp"></textarea>
+        
+        <button onclick="showProducts()">Submit</button>
+
+        <div id="product-list-area" style="display:none; margin-top:30px;">
+            <h3>Matched Products</h3>
+            <div class="product-item"><input type="checkbox" class="prod-check" value="Ai Adoption Feasibility"> Ai Adoption Feasibility</div>
+            <div class="product-item"><input type="checkbox" class="prod-check" value="Ai Adoption Transformation Fund"> Ai Adoption Transformation Fund</div>
+            <div class="product-item"><input type="checkbox" class="prod-check" value="Amazon Accelerator Programme"> Amazon Accelerator Programme</div>
+            <div class="product-item"><input type="checkbox" class="prod-check" value="Becoming Investor Ready"> Becoming Investor Ready</div>
+            <div class="product-item"><input type="checkbox" class="prod-check" value="Finance Options For Your Business"> Finance Options For Your Business</div>
+            <button onclick="finalApply()">Apply</button>
+        </div>
+    </div>
+
+    <div id="step4" class="step portal-main">
+        <div class="logo-placeholder">SCOTTISH ENTERPRISE</div>
+        <div class="portal-title">Application Portal</div>
+        <div id="final-summary" style="margin-top:40px; text-align:left; max-width:500px; margin-left:auto; margin-right:auto;"></div>
+    </div>
+</div>
+
+<script>
+    let currentScore = 100;
+    let issues = [];
+    let passes = [];
+
+    function processAssessment() {
+        const d = {
+            q1: document.getElementById('q1').value, q2: document.getElementById('q2').value,
+            q3: document.getElementById('q3').value, q4: document.getElementById('q4').value,
+            q5: document.getElementById('q5').value, q6: document.getElementById('q6').value,
+            q7: document.getElementById('q7').value, q8: document.getElementById('q8').value,
+            q9: parseInt(document.getElementById('q9').value), q10: document.getElementById('q10').value,
+            q11: document.getElementById('q11').value, q12: document.getElementById('q12').value
+        };
+
+        let html = "";
+        issues = [];
+        passes = [];
+        let force0 = false;
+        let force50 = false;
+        const partners = "<ul><li>Business Gateway</li><li>HIE</li><li>SOSE</li><li>Skills Development Scotland</li></ul>";
+
+        // Sections 1-8 (Score 0% triggers)
+        if(d.q1 === "No") { force0 = true; issues.push("Based outside Scotland"); html += `<div class="report-sec hard"><h3>Section 1: Based in Scotland</h3><p><b>We can’t support you yet: </b><br>Scottish Enterprise only deals with Companies that are based in Scotland. For support you should visit our International Partner ‘Scottish Development International’.</p></div>`; } else passes.push("Based in Scotland");
+        if(d.q2 === "Yes") { force0 = true; issues.push("Russian Company dealings"); html += `<div class="report-sec hard"><h3>Section 2: Russian Sanctions</h3><p><b>We can’t support you yet: </b><br>Scottish Enterprise cannot currently deal with companies that have dealings with Russian Companies. This is part of the Scottish Government Sanctions policy.</p></div>`; } else passes.push("No Russian dealings");
+        if(d.q3 === "Yes") { force0 = true; issues.push("Military Trading"); html += `<div class="report-sec hard"><h3>Section 3: Military Trading</h3><p><b>We can’t support you yet: </b><br>Scottish Enterprise cannot currently deal with companies that deal in munitions or weapons.</p></div>`; } else passes.push("No military trading");
+        if(d.q4 === "No") { force0 = true; issues.push("Unwilling to work with SE"); html += `<div class="report-sec hard"><h3>Section 4: Scottish Enterprise</h3><p><b>We can’t support you yet: </b><br>If you are unwilling to work with Scottish Enterprise then we cannot provide you support. Partners who can help: ${partners}</p></div>`; } else passes.push("Willing to work with SE");
+        if(d.q5 === "Maintain") { force0 = true; issues.push("Maintaining status (No Growth)"); html += `<div class="report-sec hard"><h3>Section 5: Ambition</h3><p><b>We can’t support you yet: </b><br>Scottish Enterprise is targeted at companies that are ambitious to grow. Partners who can help: ${partners}</p></div>`; } else passes.push("Ambitious to grow");
+        if(d.q6 === "Yes") { force0 = true; issues.push("Sub-Prime Lending sector"); html += `<div class="report-sec hard"><h3>Section 6: Sub Prime Lending</h3><p><b>We can’t support you yet:</b><br>Scottish Enterprise cannot currently deal with companies in the Sub Prime Lending business.</p></div>`; } else passes.push("Non sub-prime lending");
+        if(d.q7 === "Yes") { force0 = true; issues.push("Adult Entertainment sector"); html += `<div class="report-sec hard"><h3>Section 7: Adult Entertainment</h3><p><b>We can’t support you yet: </b><br>Scottish Enterprise cannot currently deal with companies in the Adult Entertainment business.</p></div>`; } else passes.push("Non adult entertainment");
+        if(d.q8 === "Yes") { force0 = true; issues.push("Gambling sector"); html += `<div class="report-sec hard"><h3>Section 8: Gambling</h3><p><b>We can’t support you yet: </b><br>Scottish Enterprise cannot currently deal with companies in the Gambling business.</p></div>`; } else passes.push("Non gambling sector");
+
+        // Sections 9-12 (Score 50% triggers)
+        if(d.q9 < 10) { force50 = true; issues.push("Less than 10 employees"); html += `<div class="report-sec soft"><h3>Section 9: Employees</h3><p><b>We are less likely to support you because: </b><br>Scottish Enterprise typically does not deal with small companies (less than 10 Employees). This is not a hard rejection...</p></div>`; } else passes.push("10+ employees");
+        if(d.q10 === "No") { force50 = true; issues.push("Net Zero non-compliance"); html += `<div class="report-sec soft"><h3>Section 10: Net Zero</h3><p><b>We are less likely to support you because: </b><br>Scottish Enterprise is compelled to work with companies that meet Net Zero standards. Use our Net Zero Accelerator Tool</p></div>`; } else passes.push("Net Zero compliant");
+        if(d.q11 === "No") { force50 = true; issues.push("Fair Work non-compliance"); html += `<div class="report-sec soft"><h3>Section 11: Fair Work</h3><p><b>We are less likely to support you because: </b><br>Scottish Enterprise is compelled to work with companies that meet Fair Work standards...</p></div>`; } else passes.push("Fair Work compliant");
+        if(d.q12 === "No") { force50 = true; issues.push("Not paying Real Living Wage"); html += `<div class="report-sec soft"><h3>Section 12: Real Living Wage</h3><p><b>We are less likely to support you because: </b><br>Scottish Enterprise is compelled to work with companies that pay the Real Living Wage...</p></div>`; } else passes.push("Real Living Wage compliant");
+
+        currentScore = force0 ? 0 : (force50 ? 50 : 100);
+        let scoreHtml = `<h2>Eligibility Score</h2><span class="score-num">${currentScore}%</span>`;
+        if(currentScore === 100) scoreHtml += `<p>You have passed all the pre-qualification measures.</p>`;
+        else scoreHtml += `<p>Reasons for ${currentScore}% score: <ul><li>${issues.join('</li><li>')}</li></ul></p>`;
+
+        document.getElementById('report-output').innerHTML = html;
+        document.getElementById('score-output').innerHTML = scoreHtml;
+        
+        let navHtml = `<button onclick="location.reload()" style="background:#666">Back</button>`;
+        if(currentScore >= 50) navHtml += `<button onclick="showProductPage()" style="margin-left:10px;">Get Support</button>`;
+        document.getElementById('report-nav').innerHTML = navHtml;
+
+        switchStep(2);
+    }
+
+    function showProductPage() {
+        let summary = "<strong>Previous Assessment Results:</strong><ul>";
+        issues.forEach(i => summary += `<li>Consideration: ${i}</li>`);
+        passes.forEach(p => summary += `<li>Confirmed: ${p}</li>`);
+        summary += "</ul>";
+        document.getElementById('summary-prev').innerHTML = summary;
+        switchStep(3);
+    }
+
+    function showProducts() {
+        document.getElementById('product-list-area').style.display = 'block';
+    }
+
+    function finalApply() {
+        const selected = Array.from(document.querySelectorAll('.prod-check:checked')).map(c => c.value);
+        let finalHtml = "<h3>Applying for:</h3><ul>";
+        selected.forEach(s => finalHtml += `<li>${s}</li>`);
+        finalHtml += "</ul>";
+        document.getElementById('final-summary').innerHTML = finalHtml;
+        switchStep(4);
+    }
+
+    function switchStep(n) {
+        document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+        document.getElementById('step' + n).classList.add('active');
+        window.scrollTo(0,0);
+    }
+</script>
+
+</body>
+</html>
